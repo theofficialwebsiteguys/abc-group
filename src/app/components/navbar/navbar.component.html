@@ -1,0 +1,66 @@
+<div class="top-header">
+  <div class="logo-area">
+    <a href="/"><img src="assets/logo.png" alt="Stony Point Logo" class="logo" /></a>
+  </div>
+
+  <!-- Hamburger for mobile -->
+  <div class="hamburger" (click)="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Desktop Nav -->
+  <nav class="main-nav" *ngIf="!isMobileMenuOpen">
+    <ul>
+      <li><a routerLink="/about">About Us</a></li>
+      <li><a routerLink="/impact">Impact</a></li>
+      <li><a routerLink="/why">Why ABC?</a></li>
+      <li><a routerLink="/blog">Blog</a></li>
+      <li><a routerLink="/team">Team</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="top-right">
+    <div class="social-icons">
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-linkedin"></i>
+    </div>
+  </div>
+</div>
+
+<div class="mobile-menu" [class.open]="isMobileMenuOpen">
+  <button class="close-btn" (click)="toggleMenu()">×</button>
+
+  <ul>
+    <li><a routerLink="/#overview" (click)="toggleMenu()">About Us</a></li>
+    <li><a routerLink="/#maps" (click)="toggleMenu()">Impact</a></li>
+    <li><a routerLink="/#artifacts" (click)="toggleMenu()">Culture</a></li>
+    <li><a routerLink="/#timeline" (click)="toggleMenu()">Blog</a></li>
+    <li><a routerLink="/#sights" (click)="toggleMenu()">Team</a></li>
+    <li><a routerLink="/#books" (click)="toggleMenu()">Contact us</a></li>
+  </ul>
+
+  <!-- Logo + Social Icons -->
+  <div class="mobile-footer">
+    <a routerLink="/">
+      <img src="assets/logo.png" alt="Stony Point Logo" class="mobile-logo" />
+    </a>
+
+    <div class="social-icons">
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-linkedin"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="nav-accent-bar"></div>
+
+
+<!-- Bottom Navigation Bar -->
+

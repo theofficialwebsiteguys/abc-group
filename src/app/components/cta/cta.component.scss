@@ -1,0 +1,115 @@
+.cta-section {
+  position: relative;
+  background-image: url('../../../assets/cta.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding: 5rem 2rem;
+  color: #fff;
+  z-index: 1;
+  overflow: hidden;
+
+  // Overlay
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55); // dark overlay
+    z-index: -1;
+  }
+
+  .cta-content {
+    position: relative; // to stay above overlay
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .cta-text {
+    flex: 1;
+    min-width: 300px;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+
+      .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.white {
+          background: #fff;
+          color: #333;
+          border: none;
+
+          &:hover {
+            background: #f0f0f0;
+          }
+        }
+
+        &.outline {
+          background: transparent;
+          border: 1px solid #fff;
+          color: #fff;
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.1);
+          }
+        }
+      }
+    }
+  }
+
+  .cta-image {
+    flex: 1;
+    min-width: 300px;
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-content {
+    flex-direction: column;
+    text-align: center;
+
+    .cta-text {
+      .cta-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+
+    .cta-image {
+      margin-top: 2rem;
+    }
+  }
+}

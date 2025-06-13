@@ -1,0 +1,16 @@
+<section class="testimonial-section">
+  <div class="testimonial">
+    <p class="quote">"{{ quote }}"</p>
+    <div class="client">
+      <img [src]="avatar" [alt]="name" />
+      <div class="client-info">
+        <strong>{{ name }}</strong>
+        <p *ngIf="title || company">
+          <span *ngIf="title">{{ title }}</span>
+          <span *ngIf="title && company">, </span>
+          <span *ngIf="company">{{ company }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
