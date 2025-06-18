@@ -1,1 +1,117 @@
-<p>team-page works!</p>
+<app-cta
+  [title]="'Our Team'"
+></app-cta>
+
+<app-services
+  (memberSelected)="handleMemberSelect($event)"
+  [sectionTitle] = "'Meet the Visionaries'"
+  [sectionSubtext] = "'Our team is built on ambition, mentorship, and a commitment to developing the next generation of business leaders.'"
+  [services]="[
+    {
+      icon: 'assets/team/angel-jacome.png',
+      title: 'Angel Jacome',
+      description: 'President & CEO',
+      route: '/team-member',
+      data: { name: 'Angel Jacome', role: 'President & CEO', desc1: 'Angel is an entrepreneur and business coach. He grew up in Venezuela and moved to Georgia in 2001. He started his first two companies while going to Kennesaw State University and learned he had a passion for business and self-development at an early age.', desc2: ' After graduating Angel was one of three people who launched a pilot that was so successful it created an entire new channel for a major client reaching $100 million in revenue in its first 4 years. He then opened businesses in New Jersey, Cleveland, Louisville, Kansas City, St Louis and in 2016 came back to Atlanta to launch ABC Consultant Group.', images: ['assets/team/angel1.jpg', 'assets/team/angel2.jpg', 'assets/team/angel3.jpg'] }
+    },
+    {
+      icon: 'assets/team/jesus-jacome.png',
+      title: 'Jesus Jacome',
+      description: 'Senior Managing Partner',
+      route: '/team-member',
+      data: { name: 'Jesus Jacome', role: 'Senior Managing Partner', desc1: 'Jesus was born in Caracas, Venezuela and spent most of his early years in a small town one hour south of the Venezuelan capital. At the Age of 16, in August of 2001, Jacome’s parents decided to come to the US in search of a better future and to provide their children with superior education and greater opportunities.', desc2: 'Entrepreneur Jesus Jacome has ventured into many diverse businesses. After the housing Industry collapsed in 2009, Jacome made the decision to pursue a career in the field of marketing and sales, where he excelled rapidly and exceeded many Clients expectations. Jesus developed his leadership skills and training abilities, falling in love with the chance to provide opportunity to others.' , images: ['assets/team/jesus.jpg']}
+    },
+    {
+      icon: 'assets/team/joanna-jacome.png',
+      title: 'Joanna Jacome',
+      description: 'Hub & HR Manager',
+      route: '/team-member',
+      data: {
+        name: 'Joanna Jacome',
+        role: 'Hub & HR Manager',
+        desc1: `Joanna is an Atlanta native! Before joining the ABC team, Joanna worked in the retail industry where she gained skills in customer service and leadership. Throughout her experience, she knew that wasn't enough for her. She wanted an opportunity that was challenging, had room for growth, and overall fun!`,
+        desc2: `Today, Joanna plays a big role in our business — she’s the Head of Recruiting and manages HR duties in the office. Her main goal is to provide endless opportunities for her colleagues through compassion and bold determination. She aims to help each individual be fearless and develop to their fullest potential.`,
+        images: [
+          'assets/team/joanna1.jpg',
+          'assets/team/joanna2.jpeg',
+          'assets/team/joanna3.jpeg',
+          'assets/team/joanna4.jpg'
+        ]
+      }
+    },
+    {
+      icon: 'assets/team/maria-urdaneta.png',
+      title: 'Maria Urdaneta',
+      description: 'Human Resources Recruiter',
+      route: '/team-member',
+      data: {
+        name: 'Maria Urdaneta',
+        role: 'Human Resources Recruiter',
+        desc1: `María Urdaneta is a Venezuelan professional passionate about business development, fashion and art, which led her to pursue careers in both public accounting and fashion design, earning degrees in both fields.`,
+        desc2: `María has always had a strong interest in running her own business and finds joy in helping others along the way. This is why she has always been drawn to the human resources field. Her goal is always stand out in every project she takes on, which has resulted in success in her professional life and personal projects.`,
+        images: [
+          'assets/team/maria1.jpg',
+          'assets/team/maria2.jpg',
+          'assets/team/maria3.jpg',
+        ]
+      }
+    },
+    {
+      icon: 'assets/team/michelle.png',
+      title: 'Michelle Arellano Chavez',
+      description: 'Promoting Recruiter',
+      route: '/team-member',
+      data: {
+        name: 'Michelle Arellano Chavez',
+        role: 'Promoting Recruiter',
+        desc1: `Michelle Arellano is a Mexican American Business Administration sophomore student with a passion for helping people. Growing up in a multicultural community, Michelle has always been interested in understanding different perspectives and finding ways to make a positive impact on people's lives.`,
+        desc2: `In pursuit of her passion, Michelle has dedicated herself to developing a solid foundation in customer service, learning how to effectively manage resources and create value for customers. She is a dedicated student who is constantly seeking opportunities to learn and grow, both inside and outside the classroom.`,
+        images: [
+          'assets/team/michelle1.png',
+          'assets/team/michelle2.png',
+          'assets/team/michelle3.png',
+          'assets/team/michelle4.jpeg',
+          'assets/team/michelle5.jpeg',
+        ]
+      }
+    },
+    {
+      icon: 'assets/team/amani.png',
+      title: 'Amani Beliveau',
+      description: 'Junior Partner',
+      route: '/team-member',
+      data: {
+        name: 'Amani Beliveau',
+        role: 'Junior Partner',
+        desc1: `Amani completed his B.S. in Finance from Palm Beach Atlantic University. He later joined the ABC team in November 2018 and has been moving quickly up the rankings ever since. `,
+        desc2: `His favorite part about working at ABC is the life and business skills he has learned from being a part of such a rapidly growing organization. `,
+        images: [
+          'assets/team/amani1.jpg',
+          'assets/team/amani2.jpg',
+          'assets/team/amani3.jpg',
+          'assets/team/amani4.jpg',
+        ]
+      }
+    }
+  ]"
+></app-services>
+
+<app-detail-section
+  id="member-details"
+  [imageUrls]="selectedMember.images"
+  [title]="selectedMember.name"
+  [description]="
+    selectedMember.desc1
+  "
+  [description2]="
+    selectedMember.desc2
+  "
+  [imageLeft]="true"
+  [background]="'green'"
+></app-detail-section>
+
+<app-testimonials
+  [quote]="testimonial.quote"
+  [name]="testimonial.name"
+  [avatar]="testimonial.avatar"
+></app-testimonials>

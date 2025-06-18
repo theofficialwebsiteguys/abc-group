@@ -1,79 +1,47 @@
-.testimonial-section {
-  padding: 5rem 2rem;
-  margin: 0 auto;
-  max-width: 800px;
+.testimonial-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
   text-align: center;
-  background-color: #ffffff;
+  background: linear-gradient(135deg, #f9f9f9, #eef1f5);
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  
 
-  h2 {
-    font-size: 2.25rem;
-    font-weight: 700;
-    margin-bottom: 0.25rem;
-    color: #222;
+  .quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 1rem;
+    max-width: 800px;
+    line-height: 1.6;
+
+    .quote-mark {
+      font-size: 1.4rem;
+      color: #aaa;
+      vertical-align: top;
+    }
   }
 
-  .subtitle {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 2.5rem;
-  }
-
-  .testimonial {
-    background: #f9f9f9;
-    padding: 3rem 2rem;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  .client {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: 0.75rem;
 
-    .stars {
-      font-size: 1.5rem;
-      color: #ffc107;
-      margin-bottom: 1rem;
+    img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
-    .quote {
-      font-size: 1.2rem;
-      font-style: italic;
-      font-weight: 500;
-      color: #333;
-      line-height: 1.75;
-      max-width: 600px;
-      margin-bottom: 2.5rem;
-    }
-
-    .client {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-
-      img {
-        width: 64px;
-        height: 64px;
-        border-radius: 50%;
-        object-fit: cover;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      }
-
-      .client-info {
-        strong {
-          font-size: 1.1rem;
-          font-weight: 600;
-          color: #222;
-        }
-
-        p {
-          font-size: 0.95rem;
-          color: #555;
-          margin: 0;
-
-          span {
-            display: inline;
-          }
-        }
-      }
+    .name {
+      font-weight: 600;
+      color: #222;
+      font-size: 0.95rem;
     }
   }
 }

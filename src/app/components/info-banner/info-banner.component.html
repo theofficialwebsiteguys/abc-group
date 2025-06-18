@@ -1,0 +1,11 @@
+<section class="info-banner">
+  <ng-container *ngIf="imageUrl">
+    <div class="banner-image-wrapper">
+      <img [src]="imageUrl" [alt]="imageAlt" />
+    </div>
+  </ng-container>
+
+  <h2 class="banner-title">{{ title }}</h2>
+  <p class="banner-description">{{ description }}</p>
+  <a class="banner-button" [routerLink]="ctaLink">{{ ctaLabel }}</a>
+</section>

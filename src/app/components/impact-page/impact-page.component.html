@@ -1,1 +1,51 @@
-<p>impact-page works!</p>
+<app-cta
+  [title]="'Impact'"
+></app-cta>
+<app-testimonials
+  [quote]="testimonial.quote"
+  [name]="testimonial.name"
+  [avatar]="testimonial.avatar"
+></app-testimonials>
+<app-detail-section
+  [imageUrls]="['assets/green-steps.jpg']"
+  [title]="'Our Impact '"
+  [description]="
+    'Founded in 2011, ABC Consultants group has definitely created a reputation for itself in the direct marketing industry. Through hard work and dedication, ABC has expanded nationwide to seven locations and is expected to expand to three more markets by the end of the year. By simply providing authentic and effective branding for our clients. '
+  "
+  [description2]="
+    'We believe face-to-face interaction, and engaging conversations are a great way to build profitable business relationships. Here at ABC Consultants Group, we thrive in providing endless opportunities for individuals that look for success that has no limits and willing to put the work in to gain the results they seek!'
+  "
+  [ctaLabel]="'Learn More'"
+  [ctaLink]="'/contact'"
+  [imageLeft]="true"
+  [background]="'green'"
+></app-detail-section>
+
+<app-services
+  [sectionTitle]="'Our Values'"
+  [sectionSubtext]="'Here at ABC Consultants Group, we pride ourselves in the growth and development of young entrepreneurs, guided by relentless focus and unrivaled passion!'"
+  [buttonLabel]="'Learn More'"
+  [buttonLink]="'/services'"
+  [services]="[
+    {
+      icon: 'assets/energy.png',
+      title: 'Positivity',
+      description: 'Having positive energy is everything. It’s what fuels your mindset to conquer your task at hand but also reflects how others react towards you.'
+    },
+    {
+      icon: 'assets/performance.png',
+      title: 'Performance',
+      description: 'Here at ABC, we believe in 100% merit base. The results you put in are the results you’ll get in return. '
+    },
+    {
+      icon: 'assets/integrity.png',
+      title: 'Integrity',
+      description: 'We take pride in our morals and values and knowing what is right from wrong'
+    },
+    {
+      icon: 'assets/integrity1.png',
+      title: 'Diversity',
+      description: 'No matter what race, ethnicity, or background you may have we believe everyone deserves an equal opportunity and has their own uniqueness to help our business thrive.'
+    }
+  ]"
+></app-services>

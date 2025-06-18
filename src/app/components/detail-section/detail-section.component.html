@@ -1,0 +1,22 @@
+<section class="highlight-section" [ngClass]="{ 'reverse': !imageLeft }" [ngClass]="[background, imageLeft ? 'normal' : 'reverse']"
+>
+<div class="highlight-image fade-carousel">
+  <div class="image-frame">
+    <img
+      *ngFor="let img of imageUrls; let i = index"
+      [src]="img"
+      [alt]="'Image ' + i"
+      [class.active]="i === currentIndex"
+    />
+  </div>
+</div>
+
+
+
+  <div class="highlight-content">
+    <h2>{{ title }}</h2>
+    <p>{{ description }}</p>
+    <p>{{ description2 }}</p>
+    <a class="cta-button" [routerLink]="ctaLink" *ngIf="ctaLabel">{{ ctaLabel }}</a>
+  </div>
+</section>

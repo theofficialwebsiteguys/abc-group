@@ -1,0 +1,50 @@
+.info-banner {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: #ffffff;
+
+  .banner-image-wrapper {
+    max-width: 160px;
+    margin: 0 auto 2rem;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+  }
+
+  .banner-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000336;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .banner-description {
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto;
+    font-size: 1.1rem;
+    color: #606a84;
+    line-height: 1.6;
+  }
+
+  .banner-button {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    background-color: #52c296;
+    color: #000336;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background-color: #45b387;
+    }
+  }
+}

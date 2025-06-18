@@ -1,1 +1,69 @@
-<p>why-page works!</p>
+<app-cta
+  [title]="'Why ABC?'"
+  [description]="'We believe having a strong culture is what cultivates our business to come together to learn from each others life experiences and strengths.  '"
+  [primaryButtonText]="'Apply Now'"
+  [secondaryButtonText]="'Learn More'"
+  [backgroundImage]="'assets/puzzle-bg.jpeg'"
+></app-cta>
+<app-detail-section
+  [imageUrls]="[
+    'assets/onsite-training/1.jpeg',
+    'assets/onsite-training/2.jpeg',
+    'assets/onsite-training/3.jpeg',
+    'assets/onsite-training/4.jpeg'
+  ]"
+  [title]="'On Site Training'"
+  [description]="
+    'We provide full pay training on all levels to help one develop skills in business marketing, customer relations, and how to work effectively as a team.'
+  "
+  [ctaLabel]="'Get Training'"
+  [ctaLink]="'/contact'"
+  [imageLeft]="true"
+  [background]="'dark'"
+></app-detail-section>
+
+<app-detail-section
+  [imageUrls]="[
+    'assets/team-events/1.jpeg',
+    'assets/team-events/2.jpeg',
+    'assets/team-events/3.jpeg',
+    'assets/team-events/4.jpeg',
+    'assets/team-events/5.jpeg',
+  ]"
+  [title]="'Team Events'"
+  [description]="
+    'We all have a common goal here, find a career that we can excel in but most importantly find a  group of individuals we enjoy working with, a true team! We make it a point to really know one another even outside of the office. we believe focusing on team building is an essential part of business growth. Whether if its karaoke nights, bowling, or catching a game!'
+  "
+  [ctaLabel]="'Attend Events'"
+  [ctaLink]="'/contact'"
+  [imageLeft]="false"
+  [background]="'light'"
+></app-detail-section>
+
+<app-detail-section
+  [imageUrls]="[
+    'assets/travel-opportunities/1.jpeg',
+    'assets/travel-opportunities/2.jpeg',
+    'assets/travel-opportunities/3.jpeg',
+    'assets/travel-opportunities/4.jpeg',
+    'assets/travel-opportunities/5.jpeg',
+    'assets/travel-opportunities/6.jpeg',
+    'assets/travel-opportunities/7.jpeg',
+    'assets/travel-opportunities/8.jpeg',
+    'assets/travel-opportunities/9.jpeg'
+  ]"
+  [title]="'Travel Opportunities'"
+  [description]="
+    'We believe stepping out of the office from time to time to visit different markets or attend yearly conferences is a great way to uncover multiple avenues of opportunity to network, learn from the best in the business, and increase productivity. We even like to reward our employees to an end of the year retreat to kick back and relax. To really reflect on one another’s success!'
+  "
+  [ctaLabel]="'Join Us'"
+  [ctaLink]="'/contact'"
+  [imageLeft]="true"
+  [background]="'green'"
+></app-detail-section>
+
+<app-testimonials
+  [quote]="testimonial.quote"
+  [name]="testimonial.name"
+  [avatar]="testimonial.avatar"
+></app-testimonials>

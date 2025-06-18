@@ -1,1 +1,37 @@
-<p>about-page works!</p>
+<app-cta
+  [title]="'About Us'"
+></app-cta>
+<app-services
+  [sectionTitle]="'Growing Business By Growing People'"
+  [sectionSubtext]="
+    'ABC Consultant group is a leading marketing and consultant firm headquartered in Atlanta, Georgia. ABC specializes in representing some of the nation’s most recognizable brands including but not limited to the telecommunication, energy, and retail industry.
+    '
+  "
+></app-services>
+
+<app-testimonials
+  [quote]="testimonial.quote"
+  [name]="testimonial.name"
+  [avatar]="testimonial.avatar"
+></app-testimonials>
+<app-detail-section
+  [imageUrls]="['assets/team2.jpg']"
+  [title]="'Mission'"
+  [description]="
+    'Our team takes pride in delivering the best results tailored to our client’s needs and for the biggest return on their marketing dollar. Traditional marketing channels have been challenged by new ways people receive and interpret companies advertisements and communication messages to their prospective customers thus creating a gap between the way their products and services reach new and existing customers.'
+  "
+  [description2]="
+    'Our direct approach bridges that gap bypassing any new technology by reaching prospective customers directly. By focusing our efforts on a face-to-face, relationship-based marketing approach, we are able to bring our clients life-long customers with increased name-brand recognition and high levels of customer loyalty. '
+  "
+  [ctaLabel]="'Get Started'"
+  [ctaLink]="'/contact'"
+  [imageLeft]="false"
+  [background]="'green'"
+></app-detail-section>
+
+<!-- <app-info-banner
+  [title]="'Be a Part'"
+  [description]="'Vivacity Management is a company that believes in its employees and their potential. A mutually beneficial relationship allows us to reach new heights of success every day. Apply to become part of this amazing team.'"
+  [ctaLabel]="'Apply Now'"
+  [ctaLink]="'/apply'"
+></app-info-banner> -->

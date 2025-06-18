@@ -1,13 +1,13 @@
 .cta-section {
   position: relative;
-  background-image: url('../../../assets/cta.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  padding: 5rem 2rem;
+  padding: 2rem;
   color: #fff;
   z-index: 1;
   overflow: hidden;
+  text-align: center;
 
   // Overlay
   &::before {
@@ -17,39 +17,41 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.55); // dark overlay
+    background: rgba(0, 0, 0, 0.55);
     z-index: -1;
   }
 
+
   .cta-content {
-    position: relative; // to stay above overlay
+    position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
+    justify-content: center;
+    max-width: 900px;
     margin: 0 auto;
-    flex-wrap: wrap;
     gap: 2rem;
   }
-  
-  .cta-text {
-    flex: 1;
-    min-width: 300px;
 
+  .cta-text {
     h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 1rem;
     }
 
     p {
-      font-size: 1rem;
+      font-size: 1.125rem;
       margin-bottom: 2rem;
-      max-width: 500px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .cta-buttons {
       display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 1rem;
 
       .btn {
@@ -84,9 +86,6 @@
   }
 
   .cta-image {
-    flex: 1;
-    min-width: 300px;
-
     img {
       width: 100%;
       max-width: 400px;
@@ -98,18 +97,16 @@
 
 @media (max-width: 768px) {
   .cta-content {
-    flex-direction: column;
-    text-align: center;
+    padding: 0 1rem;
+  }
 
-    .cta-text {
-      .cta-buttons {
-        justify-content: center;
-        flex-wrap: wrap;
-      }
+  .cta-text {
+    h2 {
+      font-size: 2rem;
     }
 
-    .cta-image {
-      margin-top: 2rem;
+    p {
+      font-size: 1rem;
     }
   }
 }

@@ -1,1 +1,16 @@
-<p>blog-page works!</p>
+<app-cta
+  [title]="'Our Blog'"
+  [backgroundImage]="'assets/blog-bg.png'"
+></app-cta>
+
+<app-detail-section
+  [imageUrls]="['assets/blog/cover.jpg']"
+  [title]="'June 25, 2024'"
+  [description]="
+    'Unlocking Potential: Angel’s Journey to Organizational Consultant'
+  "
+  [ctaLabel]="'Read More'"
+  [ctaLink]="'/blog-detail'"
+  [imageLeft]="true"
+  [background]="'light'"
+></app-detail-section>

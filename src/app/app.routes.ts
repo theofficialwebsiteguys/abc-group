@@ -7,6 +7,8 @@ import { BlogPageComponent } from './components/blog-page/blog-page.component';
 import { WhyPageComponent } from './components/why-page/why-page.component';
 import { ImpactPageComponent } from './components/impact-page/impact-page.component';
 import { HomeComponent } from './components/home/home.component';
+import { TeamMemberComponent } from './components/team-member/team-member.component';
+import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -15,5 +17,7 @@ export const routes: Routes = [
     { path: 'why', component: WhyPageComponent },
     { path: 'blog', component: BlogPageComponent },
     { path: 'team', component: TeamPageComponent },
-    { path: 'contact', component: ContactComponent }
+    { path: 'contact', component: ContactComponent },
+    { path: 'team-member', component: TeamMemberComponent },
+    { path: 'blog-detail', component: BlogDetailComponent },
 ];

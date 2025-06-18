@@ -1,13 +1,12 @@
-<section class="cta-section">
+<section  class="cta-section"
+  [ngStyle]="{ 'background-image': 'url(' + backgroundImage + ')' }">
   <div class="cta-content">
     <div class="cta-text">
-      <h2>Get Started with ABC Group</h2>
-      <p>
-        Contact us today to schedule your consultation and discover how we can help you succeed.
-      </p>
-      <div class="cta-buttons">
-        <button class="btn white">Contact</button>
-        <button class="btn outline">Learn More</button>
+      <h2>{{ title }}</h2>
+      <p>{{ description }}</p>
+      <div class="cta-buttons" *ngIf="primaryButtonText || secondaryButtonText">
+        <button *ngIf="primaryButtonText" class="btn white">{{ primaryButtonText }}</button>
+        <button *ngIf="secondaryButtonText" class="btn outline">{{ secondaryButtonText }}</button>
       </div>
     </div>
   </div>

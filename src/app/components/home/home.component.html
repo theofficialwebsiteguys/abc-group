@@ -1,8 +1,36 @@
 <app-hero></app-hero>
-<app-services></app-services>
+<app-services
+  [sectionLabel]="'Solutions'"
+  [sectionTitle]="'Growing Business By Growing People'"
+  [sectionSubtext]="'Here at ABC Consultants Group, we pride ourselves in the growth and development of young entrepreneurs, guided by relentless focus and unrivaled passion!'"
+  [buttonLabel]="'Learn More'"
+  [buttonLink]="'/services'"
+  [services]="[
+    {
+      icon: '🤝',
+      title: 'Relationship-Based<br />Marketing',
+      description: 'We focus on building meaningful customer relationships that drive loyalty and retention.'
+    },
+    {
+      icon: '📣',
+      title: 'Direct Outreach<br />Strategies',
+      description: 'Our hands-on approach bypasses digital noise to reach customers personally and effectively.'
+    },
+    {
+      icon: '🚀',
+      title: 'ROI-Focused<br />Campaigns',
+      description: 'We tailor each strategy to ensure the highest return on your marketing investment.'
+    }
+  ]"
+></app-services>
 <app-testimonials
   [quote]="testimonial.quote"
   [name]="testimonial.name"
   [avatar]="testimonial.avatar"
 ></app-testimonials>
-<app-cta></app-cta>
+<app-cta
+  [title]="'Partner With ABC Group'"
+  [description]="'Let’s schedule a call and explore how we can work together.'"
+  [primaryButtonText]="'Schedule Call'"
+  [secondaryButtonText]="'View Services'"
+></app-cta>
