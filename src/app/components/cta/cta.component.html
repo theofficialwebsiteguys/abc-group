@@ -5,8 +5,9 @@
       <h2>{{ title }}</h2>
       <p>{{ description }}</p>
       <div class="cta-buttons" *ngIf="primaryButtonText || secondaryButtonText">
-        <button *ngIf="primaryButtonText" class="btn white">{{ primaryButtonText }}</button>
-        <button *ngIf="secondaryButtonText" class="btn outline">{{ secondaryButtonText }}</button>
+        <button *ngIf="secondaryButtonText" class="btn outline" routerLink="/about">{{ secondaryButtonText }}</button>
+        <button *ngIf="primaryButtonText" class="btn white" routerLink="/contact">{{ primaryButtonText }}</button>
+
       </div>
     </div>
   </div>
