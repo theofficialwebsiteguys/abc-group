@@ -10,22 +10,42 @@
   </div>
 
   <div class="services-cards">
-    <div
-      class="service-card"
-      *ngFor="let service of services"
-      [class.clickable]="!!service.data"
-      (click)="service.data && onSelect(service.data)"
-    >
-      <div class="icon">
-        <ng-container *ngIf="isImage(service.icon); else textIcon">
-          <img [src]="service.icon" alt="Service Icon" />
-        </ng-container>
-        <ng-template #textIcon>{{ service.icon }}</ng-template>
-      </div>
+   <div
+  class="service-card"
+  *ngFor="let service of services"
+  [class.clickable]="!!service.data"
+  [style.backgroundImage]="service.image ? 'url(' + service.image + ')' : 'none'"
+  (click)="service.data && onSelect(service.data)"
+>
+  <!-- Dark overlay -->
+  <div class="overlay"></div>
 
-      <h3 [innerHTML]="service.title"></h3>
-      <p>{{ service.description }}</p>
+  <!-- Static content (always visible) -->
+  <div class="static-content">
+    <div class="icon">
+     <ng-container [ngSwitch]="service.iconType">
+        <!-- If it's an image icon -->
+        <img *ngSwitchCase="'image'" [src]="service.icon" alt="Service Icon" />
+
+        <!-- If it's a Font Awesome icon -->
+        <i *ngSwitchCase="'fa'" [class]="service.icon" aria-hidden="true"></i>
+
+        <!-- Default to text/emoji icon -->
+        <span *ngSwitchDefault>{{ service.icon }}</span>
+      </ng-container>
+      <ng-template #textIcon>{{ service.icon }}</ng-template>
     </div>
+    <h3 [innerHTML]="service.title"></h3>
+  </div>
+
+  <!-- Hover content -->
+  <div class="hover-reveal">
+     <h3 [innerHTML]="service.title"></h3>
+    <p>{{ service.description }}</p>
+  </div>
+</div>
+
+
 
   </div>
 

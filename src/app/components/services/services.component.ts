@@ -14,10 +14,11 @@ export class ServicesComponent {
   @Input() sectionSubtext: string = '';
 
   @Input() services: {
-    icon: string;
-    iconType?: 'image' | 'text'; // default is 'text'
+    icon?: string;
+    iconType?: 'image' | 'text' | 'fa'; // default is 'text'
     title: string;
     description: string;
+    image?: string;
     route?: string;
     data?: { name: string, role?: string, desc1?: string, desc2?: string , images?: string[] }
   }[] = [];

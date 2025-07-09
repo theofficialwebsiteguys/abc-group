@@ -1,5 +1,6 @@
 <app-cta
   [title]="'Impact'"
+  [backgroundImage]="'assets/banners/impact-banner.jpg'"
 ></app-cta>
 <app-testimonials
   [quote]="testimonial.quote"
@@ -28,24 +29,32 @@
   [buttonLink]="'/about'"
   [services]="[
     {
-      icon: 'assets/energy.png',
+      icon: 'fa-regular fa-face-smile-beam',
+      iconType: 'fa',
       title: 'Positivity',
-      description: 'Having positive energy is everything. It’s what fuels your mindset to conquer your task at hand but also reflects how others react towards you.'
+      description: 'Having positive energy is everything. It’s what fuels your mindset to conquer your task at hand but also reflects how others react towards you.',
+      image: 'assets/services/impact1.jpg'
     },
     {
-      icon: 'assets/performance.png',
+      icon: 'fa-solid fa-chart-line',
+      iconType: 'fa',
       title: 'Performance',
-      description: 'Here at ABC, we believe in 100% merit base. The results you put in are the results you’ll get in return. '
+      description: 'Here at ABC, we believe in 100% merit base. The results you put in are the results you’ll get in return. ',
+      image: 'assets/services/impact2.jpg'
     },
     {
-      icon: 'assets/integrity.png',
+      icon: 'fa-solid fa-scale-balanced',
+      iconType: 'fa',
       title: 'Integrity',
-      description: 'We take pride in our morals and values and knowing what is right from wrong'
+      description: 'We take pride in our morals and values and knowing what is right from wrong',
+      image: 'assets/services/impact4.jpg'
     },
     {
-      icon: 'assets/integrity1.png',
+      icon: 'fa-solid fa-hand-holding-heart',
+      iconType: 'fa',
       title: 'Diversity',
-      description: 'No matter what race, ethnicity, or background you may have we believe everyone deserves an equal opportunity and has their own uniqueness to help our business thrive.'
+      description: 'No matter what race, ethnicity, or background you may have we believe everyone deserves an equal opportunity and has their own uniqueness to help our business thrive.',
+      image: 'assets/services/impact3.jpg'
     }
   ]"
 ></app-services>

@@ -7,19 +7,25 @@
   [buttonLink]="'/impact'"
   [services]="[
     {
-      icon: '🤝',
+      icon: 'fa-solid fa-handshake-simple',
+      iconType: 'fa',
       title: 'Relationship-Based<br />Marketing',
-      description: 'We focus on building meaningful customer relationships that drive loyalty and retention.'
+      description: 'We focus on building meaningful customer relationships that drive loyalty and retention.',
+      image: 'assets/services/relationship.png'
     },
     {
-      icon: '📣',
+      icon: 'fa-solid fa-bullhorn',
+      iconType: 'fa',
       title: 'Direct Outreach<br />Strategies',
-      description: 'Our hands-on approach bypasses digital noise to reach customers personally and effectively.'
+      description: 'Our hands-on approach bypasses digital noise to reach customers personally and effectively.',
+      image: 'assets/services/outreach.jpeg'
     },
     {
-      icon: '🚀',
+      icon: 'fa-solid fa-chart-simple',
+      iconType: 'fa',
       title: 'ROI-Focused<br />Campaigns',
-      description: 'We tailor each strategy to ensure the highest return on your marketing investment.'
+      description: 'We tailor each strategy to ensure the highest return on your marketing investment.',
+      image: 'assets/services/roi.jpg'
     }
   ]"
 ></app-services>
@@ -33,4 +39,5 @@
   [description]="'Let’s schedule a call and explore how we can work together.'"
   [primaryButtonText]="'Schedule Call'"
   [secondaryButtonText]="'View Services'"
+  [backgroundImage]="'assets/banners/sub-banner1.jpg'"
 ></app-cta>

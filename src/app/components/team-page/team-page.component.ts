@@ -6,7 +6,7 @@ import { DetailSectionComponent } from '../detail-section/detail-section.compone
 
 @Component({
   selector: 'app-team-page',
-  imports: [CtaComponent, ServicesComponent, TestimonialsComponent, DetailSectionComponent],
+  imports: [CtaComponent, ServicesComponent, TestimonialsComponent],
   templateUrl: './team-page.component.html',
   styleUrl: './team-page.component.scss'
 })
@@ -23,18 +23,18 @@ export class TeamPageComponent {
   handleMemberSelect(member: any) {
     this.selectedMember = member;
 
-    setTimeout(() => {
-      const el = document.getElementById('member-details');
-      if (el) {
-        const offset = -100; // scroll 100px above the element
-        const top = el.getBoundingClientRect().top + window.pageYOffset + offset;
+    // setTimeout(() => {
+    //   const el = document.getElementById('member-details');
+    //   if (el) {
+    //     const offset = -100; // scroll 100px above the element
+    //     const top = el.getBoundingClientRect().top + window.pageYOffset + offset;
 
-        window.scrollTo({
-          top,
-          behavior: 'smooth'
-        });
-      }
-    }, 0);
+    //     window.scrollTo({
+    //       top,
+    //       behavior: 'smooth'
+    //     });
+    //   }
+    // }, 0);
   }
 
 }

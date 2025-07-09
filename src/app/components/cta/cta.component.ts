@@ -13,6 +13,6 @@ export class CtaComponent {
   @Input() description: string = '';
   @Input() primaryButtonText?: string;
   @Input() secondaryButtonText?: string;
-  @Input() backgroundImage: string = 'assets/cta.jpg';
+  @Input() backgroundImage?: string;
 
 }
