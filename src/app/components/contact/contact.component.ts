@@ -12,7 +12,7 @@ import { GoogleMap, GoogleMapsModule } from '@angular/google-maps';
 export class ContactComponent {
   name = '';
   email = '';
-  company = '';
+  phone = '';
   message = '';
 
   @ViewChild(GoogleMap) map!: GoogleMap;

@@ -12,9 +12,11 @@ import { Router, RouterModule } from '@angular/router';
 export class HeroComponent {
  bgImages: string[] = [
     'assets/banners/hero-banner1.jpg',
+    'assets/banners/hero-banner6.png',
     'assets/banners/hero-banner2.jpg',
     'assets/banners/hero-banner3.jpg',
     'assets/banners/hero-banner4.jpg',
+    'assets/banners/hero-banner7.jpg',
     'assets/banners/hero-banner5.jpg',
   ];
 

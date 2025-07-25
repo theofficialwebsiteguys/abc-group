@@ -14,6 +14,7 @@
   <nav class="main-nav" *ngIf="!isMobileMenuOpen">
     <ul>
       <li><a routerLink="/about">About Us</a></li>
+      <li><a routerLink="/markets">Markets</a></li>
       <li><a routerLink="/impact">Impact</a></li>
       <li><a routerLink="/why">Why ABC?</a></li>
       <li><a routerLink="/blog">Blog</a></li>
@@ -35,12 +36,13 @@
   <button class="close-btn" (click)="toggleMenu()">×</button>
 
   <ul>
-    <li><a routerLink="/#overview" (click)="toggleMenu()">About Us</a></li>
-    <li><a routerLink="/#maps" (click)="toggleMenu()">Impact</a></li>
-    <li><a routerLink="/#artifacts" (click)="toggleMenu()">Culture</a></li>
-    <li><a routerLink="/#timeline" (click)="toggleMenu()">Blog</a></li>
-    <li><a routerLink="/#sights" (click)="toggleMenu()">Team</a></li>
-    <li><a routerLink="/#books" (click)="toggleMenu()">Contact us</a></li>
+    <li><a routerLink="/about" (click)="toggleMenu()">About Us</a></li>
+    <li><a routerLink="/markets" (click)="toggleMenu()">Markets</a></li>
+    <li><a routerLink="/impact" (click)="toggleMenu()">Impact</a></li>
+    <li><a routerLink="/why" (click)="toggleMenu()">Culture</a></li>
+    <li><a routerLink="/blog" (click)="toggleMenu()">Blog</a></li>
+    <li><a routerLink="/team" (click)="toggleMenu()">Team</a></li>
+    <li><a routerLink="/contact" (click)="toggleMenu()">Contact us</a></li>
   </ul>
 
   <!-- Logo + Social Icons -->

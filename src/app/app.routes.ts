@@ -9,10 +9,12 @@ import { ImpactPageComponent } from './components/impact-page/impact-page.compon
 import { HomeComponent } from './components/home/home.component';
 import { TeamMemberComponent } from './components/team-member/team-member.component';
 import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
+import { MarketsPageComponent } from './components/markets-page/markets-page.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'about', component: AboutPageComponent },
+    { path: 'markets', component: MarketsPageComponent },
     { path: 'impact', component: ImpactPageComponent },
     { path: 'why', component: WhyPageComponent },
     { path: 'blog', component: BlogPageComponent },
