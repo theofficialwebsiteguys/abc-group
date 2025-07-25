@@ -1,1 +1,57 @@
-<p>markets-page works!</p>
+<app-cta
+  [title]="'Markets'"
+  [backgroundImage]="'assets/banners/markets-banner.jpg'"
+></app-cta>
+<app-services
+  [buttonLabel]="'Learn More'"
+  [buttonLink]="'/about'"
+  [services]="[
+    {
+      title: 'Dallas, TX',
+      description: 'Description Here',
+      image: 'assets/markets/texas.jpg'
+    },
+    {
+      title: 'Raleigh, NC',
+      description: 'Description Here',  
+      image: 'assets/markets/nc.jpg'
+    },
+    {
+
+      title: 'Greenville, SC',
+      description: 'Description Here',
+      image: 'assets/markets/sc.jpg'
+    },
+    {
+      title: 'Louisville, KY',
+      description: 'Description Here',
+      image: 'assets/markets/kentucky.jpg'
+    },
+    {      
+      title: 'Evansville, IN',
+      description: 'Description Here',
+      image: 'assets/markets/indiana.jpg'
+    }
+  ]"
+></app-services>
+<!-- <app-detail-section
+  [imageUrls]="['assets/banners/about-banner.jpg']"
+  [title]="'Mission'"
+  [description]="
+    'Our team takes pride in delivering the best results tailored to our client’s needs and for the biggest return on their marketing dollar. Traditional marketing channels have been challenged by new ways people receive and interpret companies advertisements and communication messages to their prospective customers thus creating a gap between the way their products and services reach new and existing customers.'
+  "
+  [description2]="
+    'Our direct approach bridges that gap bypassing any new technology by reaching prospective customers directly. By focusing our efforts on a face-to-face, relationship-based marketing approach, we are able to bring our clients life-long customers with increased name-brand recognition and high levels of customer loyalty. '
+  "
+  [ctaLabel]="'Get Started'"
+  [ctaLink]="'/contact'"
+  [imageLeft]="false"
+  [background]="'green'"
+></app-detail-section> -->
+
+<!-- <app-info-banner
+  [title]="'Be a Part'"
+  [description]="'Vivacity Management is a company that believes in its employees and their potential. A mutually beneficial relationship allows us to reach new heights of success every day. Apply to become part of this amazing team.'"
+  [ctaLabel]="'Apply Now'"
+  [ctaLink]="'/apply'"
+></app-info-banner> -->
