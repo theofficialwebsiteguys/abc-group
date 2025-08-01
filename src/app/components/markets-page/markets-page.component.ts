@@ -16,4 +16,43 @@ export class MarketsPageComponent {
     name: "John Lasseter",
     avatar: "assets/john-lasseter.jpeg"
   };
+
+  selectedState: any = null;
+  shouldScrollToState = false;
+
+  scrollToMarket(data: any) {
+    // Prefer `data.name`, fallback to title or something else
+    const id = this.generateId(data.name || data.title);
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  generateId(value: string): string {
+    return value.toLowerCase().replace(/[^a-z0-9]/g, '');
+  }
+
+ handleMemberSelect(state: any) {
+    this.selectedState = state;
+    this.shouldScrollToState = true;
+
+    // Delay scroll to let DOM update
+    setTimeout(() => {
+      if (!this.shouldScrollToState) return;
+
+      const el = document.getElementById('state-details');
+      if (el) {
+        const offset = -100;
+        const top = el.getBoundingClientRect().top + window.pageYOffset + offset;
+
+        window.scrollTo({
+          top,
+          behavior: 'smooth'
+        });
+
+        this.shouldScrollToState = false; // Reset after scroll
+      }
+    }, 0);
+  }
 }

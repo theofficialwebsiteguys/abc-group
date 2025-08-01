@@ -17,7 +17,7 @@ export const routes: Routes = [
     { path: 'markets', component: MarketsPageComponent },
     { path: 'impact', component: ImpactPageComponent },
     { path: 'why', component: WhyPageComponent },
-    { path: 'blog', component: BlogPageComponent },
+    // { path: 'blog', component: BlogPageComponent },
     { path: 'team', component: TeamPageComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'team-member', component: TeamMemberComponent },
