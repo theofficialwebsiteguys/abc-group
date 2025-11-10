@@ -1,13 +1,38 @@
 <app-cta
   [title]="'About Us'"
+  [description]="'At ABC Consultants Group, we’re built on the foundation of mentorship, leadership, and opportunity. Our mission is to develop people — empowering every individual to reach their full potential while driving lasting growth for our clients and communities.'"
   [backgroundImage]="'assets/banners/about-banner.jpeg'"
 ></app-cta>
+
 <app-services
+ [sectionLabel]="'Solutions'"
   [sectionTitle]="'Growing Business By Growing People'"
-  [sectionSubtext]="
-    'ABC Consultant group is a leading marketing and consultant firm headquartered in Atlanta, Georgia. ABC specializes in representing some of the nation’s most recognizable brands including but not limited to the telecommunication, energy, and retail industry.
-    '
-  "
+  [sectionSubtext]="'Here at ABC Consultants Group, we pride ourselves in the growth and development of young entrepreneurs, guided by relentless focus and unrivaled passion!'"
+  [buttonLabel]="'Learn More'"
+  [buttonLink]="'/impact'"
+  [services]="[
+    {
+      icon: 'fa-solid fa-handshake-simple',
+      iconType: 'fa',
+      title: 'Relationship-Based<br />Marketing',
+      description: 'We focus on building meaningful customer relationships that drive loyalty and retention.',
+      image: 'assets/services/relationship.png'
+    },
+    {
+      icon: 'fa-solid fa-bullhorn',
+      iconType: 'fa',
+      title: 'Direct Outreach<br />Strategies',
+      description: 'Our hands-on approach bypasses digital noise to reach customers personally and effectively.',
+      image: 'assets/services/outreach.jpeg'
+    },
+    {
+      icon: 'fa-solid fa-chart-simple',
+      iconType: 'fa',
+      title: 'ROI-Focused<br />Campaigns',
+      description: 'We tailor each strategy to ensure the highest return on your marketing investment.',
+      image: 'assets/services/roi.jpg'
+    }
+  ]"
 ></app-services>
 
 <app-testimonials

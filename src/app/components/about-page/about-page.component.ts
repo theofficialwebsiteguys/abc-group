@@ -17,4 +17,30 @@ export class AboutPageComponent {
     name: "John Lasseter",
     avatar: "assets/john-lasseter.jpeg"
   };
+
+  // about.component.ts
+aboutServices = [
+    {
+      icon: 'fa-solid fa-handshake-simple',
+      iconType: 'fa',
+      title: 'Relationship-Based<br />Marketing',
+      description: 'We focus on building meaningful customer relationships that drive loyalty and retention.',
+      image: 'assets/services/relationship.png'
+    },
+    {
+      icon: 'fa-solid fa-bullhorn',
+      iconType: 'fa',
+      title: 'Direct Outreach<br />Strategies',
+      description: 'Our hands-on approach bypasses digital noise to reach customers personally and effectively.',
+      image: 'assets/services/outreach.jpeg'
+    },
+    {
+      icon: 'fa-solid fa-chart-simple',
+      iconType: 'fa',
+      title: 'ROI-Focused<br />Campaigns',
+      description: 'We tailor each strategy to ensure the highest return on your marketing investment.',
+      image: 'assets/services/roi.jpg'
+    }
+  ];
+
 }

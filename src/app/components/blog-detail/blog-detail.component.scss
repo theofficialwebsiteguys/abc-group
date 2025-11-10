@@ -1,92 +1,164 @@
-.blog-section {
+.blog-detail {
+  padding: clamp(10rem, 16vw, 16rem) clamp(2rem, 10vw, 6rem);
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
 
   .blog-header {
     text-align: center;
-    margin-bottom: 2rem;
 
     .back-btn {
       background: none;
       border: none;
-      color: #007bff;
+      color: var(--brand-700);
       font-weight: 600;
       font-size: 1rem;
       cursor: pointer;
-      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
+      transition: color 0.3s ease;
+      width: 100%;
       text-align: left;
 
       &:hover {
+        color: var(--brand-600);
         text-decoration: underline;
       }
     }
 
-    h1 {
-      font-size: 2rem;
+    .blog-title {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--ink-900);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .blog-date {
+      color: var(--brand-600);
       font-weight: 700;
+      letter-spacing: 0.05em;
       margin-bottom: 1rem;
-      color: #222;
+      font-size: 0.95rem;
     }
 
     .blog-intro {
       font-size: 1.1rem;
-      color: #555;
-      max-width: 800px;
+      color: var(--ink-700);
+      max-width: 700px;
       margin: 0 auto;
+      line-height: 1.7;
+      opacity: 0.9;
     }
   }
 
-  .blog-entry {
+  /* === Content Blocks === */
+  .blog-body {
     display: flex;
-    flex-direction: column-reverse;
-    gap: 2rem;
-    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
 
-    @media (min-width: 768px) {
-      flex-direction: row;
+    .blog-block {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
 
-      &.reverse {
-        flex-direction: row-reverse;
+      @media (min-width: 768px) {
+        flex-direction: row;
+
+        &.reverse {
+          flex-direction: row-reverse;
+        }
+      }
+
+      .blog-image {
+        flex: 1;
+        overflow: hidden;
+        border-radius: 18px;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+        transition: transform 0.4s ease;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+          border-radius: inherit;
+        }
+
+        &:hover img {
+          transform: scale(1.05);
+        }
+      }
+
+      .blog-text {
+        flex: 1;
+        text-align: left;
+        max-width: 550px;
+
+        h3 {
+          font-size: clamp(1.6rem, 2.5vw, 2rem);
+          margin-bottom: 0.6rem;
+          color: var(--ink-900);
+          font-weight: 700;
+        }
+
+        .sub {
+          font-weight: 600;
+          color: var(--brand-700);
+          font-size: 1rem;
+          margin-bottom: 1rem;
+          letter-spacing: 0.02em;
+        }
+
+        .desc {
+          font-size: 1rem;
+          line-height: 1.8;
+          color: var(--ink-700);
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+
+  /* === Fade Animation === */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(25px);
+    animation: fadeUp 0.8s ease forwards;
+
+    &:nth-child(1) { animation-delay: 0.1s; }
+    &:nth-child(2) { animation-delay: 0.2s; }
+    &:nth-child(3) { animation-delay: 0.3s; }
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* === Responsive Adjustments === */
+  @media (max-width: 768px) {
+ 
+
+    .blog-header {
+      .blog-title {
+        font-size: 1.9rem;
+      }
+
+      .blog-intro {
+        font-size: 1rem;
       }
     }
 
-    .blog-image {
-      flex: 1;
-
-      img {
-        width: 100%;
-        border-radius: 12px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-        object-fit: cover;
-      }
-    }
-
-    .blog-content {
-      flex: 1;
-      text-align: left;
-
-      h3 {
-        font-size: 1.75rem;
-        margin-bottom: 0.5rem;
-        color: #222;
-      }
-
-      .sub {
-        font-weight: 600;
-        font-size: 1rem;
-        color: #555;
-        margin-bottom: 1rem;
-      }
-
-      .text {
-        font-size: 1rem;
-        line-height: 1.7;
-        color: #444;
-      }
+    .blog-body .blog-block {
+      gap: 1.5rem;
     }
   }
 }

@@ -40,7 +40,22 @@
 
   <!-- Hover content -->
   <div class="hover-reveal">
-     <h3 [innerHTML]="service.title"></h3>
+   <div class="static-content-hover">
+    <div class="icon">
+     <ng-container [ngSwitch]="service.iconType">
+        <!-- If it's an image icon -->
+        <img *ngSwitchCase="'image'" [src]="service.icon" alt="Service Icon" />
+
+        <!-- If it's a Font Awesome icon -->
+        <i *ngSwitchCase="'fa'" [class]="service.icon" aria-hidden="true"></i>
+
+        <!-- Default to text/emoji icon -->
+        <span *ngSwitchDefault>{{ service.icon }}</span>
+      </ng-container>
+      <ng-template #textIcon>{{ service.icon }}</ng-template>
+    </div>
+    <h3 [innerHTML]="service.title"></h3>
+  </div>
     <p>{{ service.description }}</p>
   </div>
 </div>

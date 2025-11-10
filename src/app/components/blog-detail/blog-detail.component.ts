@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog-detail',
@@ -8,26 +9,22 @@ import { Component } from '@angular/core';
   styleUrl: './blog-detail.component.scss'
 })
 export class BlogDetailComponent {
-  blogPosts = [
-    {
-      image: 'assets/blog/1.jpg',
-      heading: 'Journey of Dedication',
-      subheading: "Angel’s path to commitment.",
-    },
-    {
-      image: 'assets/blog/2.jpg',
-      heading: 'Navigating Challenges',
-      subheading: "How Angel overcame obstacles & his advice to you.",
-    },
-    {
-      image: 'assets/blog/3.jpg',
-      heading: "Family & Foundations",
-      subheading: "Angel’s must-haves & how his family shaped who he is.",
+  date = '';
+  title = '';
+  intro = '';
+  blogPosts: any[] = [];
+
+  constructor(private router: Router) {
+    const state = this.router.getCurrentNavigation()?.extras.state as any;
+    if (state?.postData) {
+      this.date = state.postData.date;
+      this.title = state.postData.title;
+      this.intro = state.postData.intro;
+      this.blogPosts = state.postData.posts;
     }
-  ];
+  }
 
   goBack() {
     history.back();
   }
-
 }

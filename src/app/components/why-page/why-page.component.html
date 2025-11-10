@@ -1,10 +1,15 @@
 <app-cta
   [title]="'Why ABC?'"
   [description]="'We believe having a strong culture is what cultivates our business to come together to learn from each others life experiences and strengths.  '"
-  [primaryButtonText]="'Apply Now'"
-  [secondaryButtonText]="'Learn More'"
   [backgroundImage]="'assets/banners/why-banner.jpg'"
 ></app-cta>
+
+<app-testimonials
+  [quote]="testimonial.quote"
+  [name]="testimonial.name"
+  [avatar]="testimonial.avatar"
+></app-testimonials>
+
 <app-detail-section
   [imageUrls]="[
     'assets/onsite-training/1.jpg',
@@ -57,9 +62,3 @@
   [imageLeft]="true"
   [background]="'green'"
 ></app-detail-section>
-
-<app-testimonials
-  [quote]="testimonial.quote"
-  [name]="testimonial.name"
-  [avatar]="testimonial.avatar"
-></app-testimonials>

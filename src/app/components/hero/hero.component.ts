@@ -23,23 +23,23 @@ export class HeroComponent {
 testimonials = [
   {
     quote: `Success is no accident. It is hard work, perseverance, learning, studying, sacrifice and most of all, love of what you are doing or learning to do.`,
-    author: '— Pele'
+    author: 'Pele'
   },
   {
     quote: `Quality is the best business plan.`,
-    author: '— John Lasseter'
+    author: 'John Lasseter'
   },
   {
     quote: `Growth is never by mere chance; it is the result of forces working together.`,
-    author: '– James Cash Penny'
+    author: 'James Cash Penny'
   },
   {
     quote: `Innovation distinguishes between a leader and a follower.`,
-    author: '— Steve Jobs'
+    author: 'Steve Jobs'
   },
   {
     quote: `Challenge your limits, never miss an opportunity.`,
-    author: '– Alston Theodorus'
+    author: 'Alston Theodorus'
   }
 ];
 

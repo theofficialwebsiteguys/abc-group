@@ -1,10 +1,14 @@
 <section class="testimonial-banner">
-  <blockquote class="quote">
-    <span class="quote-mark">“</span>{{ quote }}<span class="quote-mark">”</span>
+  <blockquote class="quote fade-in">
+    <span class="quote-mark">“</span>
+    {{ quote }}
+    <span class="quote-mark">”</span>
   </blockquote>
 
   <div class="client">
     <img [src]="avatar" [alt]="name" />
-    <span class="name">{{ name }}</span>
+    <div class="client-text">
+      <span class="name">{{ name }}</span>
+    </div>
   </div>
 </section>

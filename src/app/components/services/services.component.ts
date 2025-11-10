@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -28,6 +28,13 @@ export class ServicesComponent {
 
   @Output() memberSelected = new EventEmitter<any>();
 
+   constructor(private el: ElementRef) {}
+
+  ngAfterViewInit() {
+    // Run once when view loads
+    this.handleScroll();
+  }
+
   ngOnInit() {
     if (this.services.length && this.services[0].data) {
       this.memberSelected.emit(this.services[0].data);
@@ -40,6 +47,22 @@ export class ServicesComponent {
 
   onSelect(member: any): void {
     this.memberSelected.emit(member);
+  }
+
+ @HostListener('window:scroll')
+  handleScroll() {
+    const cards: NodeListOf<HTMLElement> = this.el.nativeElement.querySelectorAll('.service-card');
+    const triggerBottom = window.innerHeight * 0.85;
+
+    cards.forEach((card, i) => {
+      const cardTop = card.getBoundingClientRect().top;
+      if (cardTop < triggerBottom && !card.classList.contains('visible')) {
+        // Stagger animation by index
+        setTimeout(() => {
+          card.classList.add('visible');
+        }, i * 150); // 150ms delay between each card
+      }
+    });
   }
 
 }

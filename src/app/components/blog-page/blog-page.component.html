@@ -1,9 +1,5 @@
-<app-cta
-  [title]="'Our Blog'"
-  [backgroundImage]="'assets/blog-bg.png'"
-></app-cta>
 
-<app-detail-section
+<!-- <app-detail-section
   [imageUrls]="['assets/blog/cover.jpg']"
   [title]="'June 25, 2024'"
   [description]="
@@ -13,4 +9,37 @@
   [ctaLink]="'/blog-detail'"
   [imageLeft]="true"
   [background]="'light'"
-></app-detail-section>
+></app-detail-section> -->
+
+<app-cta
+  [title]="'Our Blog'"
+  [description]="'Insights, stories, and lessons from our team — exploring leadership, growth, and what drives success at ABC.'"
+  [backgroundImage]="'assets/banners/hero-banner3.jpg'"
+></app-cta>
+
+<section class="blog-section">
+  <div class="blog-header">
+    <p class="section-label">Latest Post</p>
+    <h2>Unlocking Potential: Angel’s Journey to Organizational Consultant</h2>
+    <p class="post-date">June 25, 2024</p>
+  </div>
+
+  <div class="blog-content">
+    <div class="blog-image">
+      <img src="assets/blog/cover.jpg" alt="Angel’s Journey" />
+    </div>
+
+    <div class="blog-text">
+      <p>
+        Angel’s story is one of persistence, growth, and purpose. From early entrepreneurial ventures
+        to leading organizational development, his path reflects the power of vision and discipline.
+      </p>
+      <p>
+        As an organizational consultant, Angel now helps businesses redefine how leadership and culture
+        connect to drive impact — inspiring teams across the nation to reach their fullest potential.
+      </p>
+
+      <button class="btn primary" (click)="goToPost()">Read More</button>
+    </div>
+  </div>
+</section>

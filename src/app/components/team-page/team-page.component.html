@@ -1,82 +1,104 @@
 <app-cta
   [title]="'Our Team'"
+  [description]="'Behind every achievement is a team of dedicated leaders, mentors, and innovators — each driven by a shared vision to help others grow and succeed.'"
   [backgroundImage]="'assets/banners/team-banner.jpeg'"
 ></app-cta>
 
-<app-services
-  [sectionTitle] = "'Meet the Visionaries'"
-  [sectionSubtext] = "'Our team is built on ambition, mentorship, and a commitment to developing the next generation of business leaders.'"
-  [services]="[
-    {
-      title: 'Angel Jacome',
-      description: 'President & CEO, Angel is an entrepreneur and business coach. He grew up in Venezuela and moved to Georgia in 2001. He started his first two companies while going to Kennesaw State University and learned he had a passion for business and self-development at an early age.',
-      route: '/team-member',
-      image: 'assets/team/angel-jacome.png'
-    },
-    {
-      title: 'Jesus Jacome',
-      description: 'Senior Managing Partner, Jesus was born in Caracas, Venezuela and spent most of his early years in a small town one hour south of the Venezuelan capital. At the Age of 16, in August of 2001, Jacome’s parents decided to come to the US in search of a better future and to provide their children with superior education and greater opportunities.',
-      route: '/team-member',
-      image: 'assets/team/jesus-jacome.png'
-    },
-    {
-      title: 'Joanna Jacome',
-      description: 'Hub & HR Manager, Joanna is an Atlanta native! Before joining the ABC team, Joanna worked in the retail industry where she gained skills in customer service and leadership. Throughout her experience, she knew that wasn\'t enough for her. She wanted an opportunity that was challenging, had room for growth, and overall fun!',
-      route: '/team-member',
-      image: 'assets/team/joanna-jacome.png'
-    },
-    {
-      title: 'Maria Urdaneta',
-      description: 'Human Resources Recruiter, María Urdaneta is a Venezuelan professional passionate about business development, fashion and art, which led her to pursue careers in both public accounting and fashion design, earning degrees in both fields.',
-      route: '/team-member',
-      image: 'assets/team/maria-urdaneta.png',
-    },
-    {
-      title: 'Amani Beliveau',
-      description: 'Junior Partner, Amani completed his B.S. in Finance from Palm Beach Atlantic University. He later joined the ABC team in November 2018 and has been moving quickly up the rankings ever since.',
-      route: '/team-member',
-      image: 'assets/team/amani.png',
-    },
-    {
-      title: 'Gabe Ganjura',
-      description: 'Coming Soon',
-      route: '/team-member',
-      image: 'assets/team/gabe.png',
-    },
-    {
-      title: 'Leon Gist',
-      description: 'Coming Soon',
-      route: '/team-member',
-      image: 'assets/team/leon.png',
-    },
-    {
-      title: 'Sandra Obidiegwu',
-      description: 'Coming Soon',
-      route: '/team-member',
-      image: 'assets/team/sandra.png',
-    },
-    {
-      title: 'Blake Clemons',
-      description: 'Coming Soon',
-      route: '/team-member',
-      image: 'assets/team/blake.png',
-    }
-  ]"
-></app-services>
 
-<!-- <app-detail-section
-  id="member-details"
-  [imageUrls]="selectedMember.images"
-  [title]="selectedMember.name"
-  [description]="
-    selectedMember.desc1
-  "
-  [description2]="
-    selectedMember.desc2
-  "
-  [imageLeft]="true"
-  [background]="'green'"
-></app-detail-section> -->
+<section class="team-section">
+  <!-- Header -->
+  <div class="team-header">
+    <p class="section-label">Leadership & Growth</p>
+    <h2>Meet the Visionaries Behind ABC Group</h2>
+    <p class="section-subtext">
+      Our leadership team brings together experience, innovation, and mentorship —
+      shaping future leaders and driving success nationwide.
+    </p>
+  </div>
+
+  <!-- Team Tiered Layout -->
+  <div class="team-tiered">
+    <!-- Row 1: Angel (Leader) -->
+    <div class="tier tier-leader">
+      <article
+        class="team-card leader"
+        (click)="toggleMember(team[0])"
+        [class.active]="team[0].active"
+      >
+        <img [src]="team[0].image" [alt]="team[0].title" />
+        <span class="scrim"></span>
+
+        <div class="meta">
+          <h3>{{ team[0].title }}</h3>
+          <p class="role">{{ team[0].role }}</p>
+        </div>
+
+        <div class="bio">
+          <p>{{ team[0].description }}</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- Row 2: Jesus, Joanna, Amani -->
+    <div class="tier tier-row">
+      <article
+        class="team-card"
+        *ngFor="let member of [team[1], team[2], team[4]]"
+        (click)="toggleMember(member)"
+        [class.active]="member.active"
+      >
+        <img [src]="member.image" [alt]="member.title" />
+        <span class="scrim"></span>
+
+        <div class="meta">
+          <h4>{{ member.title }}</h4>
+          <p class="role">{{ member.role }}</p>
+        </div>
+
+        <div class="bio">
+          <p>{{ member.description }}</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- Row 3: Maria, Gabe -->
+    <div class="tier tier-row">
+      <article
+        class="team-card"
+        *ngFor="let member of [team[3], team[5], team[6]]"
+        (click)="toggleMember(member)"
+        [class.active]="member.active"
+      >
+        <img [src]="member.image" [alt]="member.title" />
+        <span class="scrim"></span>
+
+        <div class="meta">
+          <h4>{{ member.title }}</h4>
+          <p class="role">{{ member.role }}</p>
+        </div>
+
+        <div class="bio">
+          <p>{{ member.description }}</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Full Bio Modal -->
+<div class="bio-modal" *ngIf="selectedMember" (click)="closeModal()">
+  <div class="bio-card" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="closeModal()">×</button>
+    <img [src]="selectedMember.image" [alt]="selectedMember.title" />
+    <div class="bio-content">
+      <h3>{{ selectedMember.title }}</h3>
+      <p class="role">{{ selectedMember.role }}</p>
+      <p class="desc">{{ selectedMember.description }}</p>
+    </div>
+  </div>
+</div>
+
+
 
 <app-testimonials
   [quote]="testimonial.quote"

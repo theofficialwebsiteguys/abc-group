@@ -1,68 +1,101 @@
-<div class="top-header">
-  <div class="logo-area">
-    <a routerLink="/"><img src="assets/logo.png" alt="Stony Point Logo" class="logo" /></a>
-  </div>
+<!-- ===== Top Bar ===== -->
+<div class="top-bar">
+  <div class="bar-container">
+    <div class="left-info">
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-solid fa-star"></i>
+      <i class="fa-regular fa-star-half-stroke"></i>
+      <span class="review-text">Rated 4.9 / 5 from partners nationwide</span>
+    </div>
 
-  <!-- Hamburger for mobile -->
-  <div class="hamburger" (click)="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
+    <div class="right-info">
+      <div class="social-icons">
+        <a target="_blank" aria-label="Facebook" href="https://www.facebook.com/abcgroupatl/"><i class="fab fa-facebook-f"></i></a>
+        <a target="_blank" aria-label="Instagram" href="https://www.instagram.com/abcgroupatl/?hl=en"><i class="fab fa-instagram"></i></a>
+        <a target="_blank" aria-label="LinkedIn" href="https://www.linkedin.com/company/abc-consultants-group-atl/"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+      <span class="divider"></span>
+
+      <a href="mailto:info&#64;abcgroupatl.com" class="contact-link">
+        <i class="fa-regular fa-envelope"></i> info&#64;abcgroupatl.com
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="top-header" [class.is-scrolled]="scrolled"  [class.light-route]="isLightRoute">
+  <div class="logo-area">
+    <a routerLink="/" aria-label="ABC Consultants Group home">
+      <img src="assets/logo.png" alt="" class="logo"/>
+    </a>
   </div>
 
   <!-- Desktop Nav -->
   <nav class="main-nav" *ngIf="!isMobileMenuOpen">
     <ul>
-      <li><a routerLink="/about">About Us</a></li>
-      <li><a routerLink="/markets">Markets</a></li>
-      <li><a routerLink="/impact">Impact</a></li>
-      <li><a routerLink="/why">Why ABC?</a></li>
-      <li><a routerLink="/blog">Blog</a></li>
-      <li><a routerLink="/team">Team</a></li>
-      <li><a routerLink="/contact">Contact</a></li>
+      <li><a routerLink="/about" routerLinkActive="active" aria-current="page">About</a></li>
+      <li><a routerLink="/markets" routerLinkActive="active">Markets</a></li>
+      <li><a routerLink="/impact" routerLinkActive="active">Impact</a></li>
+      <li><a routerLink="/why" routerLinkActive="active">Why ABC?</a></li>
+      <li><a routerLink="/blog" routerLinkActive="active">Blog</a></li>
+      <li><a routerLink="/team" routerLinkActive="active">Team</a></li>
+      <li><a routerLink="/contact" class="cta">Contact</a></li>
     </ul>
   </nav>
 
-  <div class="top-right">
+  <!-- Social -->
+  <!-- <div class="top-right">
     <div class="social-icons">
-      <a target="_blank" href="https://www.facebook.com/abcgroupatl/"><i class="fab fa-facebook-f"></i></a>
-      <a target="_blank" href="https://www.instagram.com/abcgroupatl/?hl=en"><i class="fab fa-instagram"></i></a>
-      <a target="_blank" href="https://www.linkedin.com/company/abc-consultants-group-atl/"><i class="fab fa-linkedin"></i></a>
+      <a target="_blank" rel="noopener" aria-label="Facebook" href="https://www.facebook.com/abcgroupatl/"><i class="fab fa-facebook-f"></i></a>
+      <a target="_blank" rel="noopener" aria-label="Instagram" href="https://www.instagram.com/abcgroupatl/?hl=en"><i class="fab fa-instagram"></i></a>
+      <a target="_blank" rel="noopener" aria-label="LinkedIn" href="https://www.linkedin.com/company/abc-consultants-group-atl/"><i class="fab fa-linkedin"></i></a>
     </div>
-  </div>
+  </div> -->
+
+  <!-- Hamburger (always in DOM for a11y) -->
+  <button class="hamburger"
+          [class.open]="isMobileMenuOpen"
+          (click)="toggleMenu()"
+          aria-label="Toggle navigation"
+          [attr.aria-expanded]="isMobileMenuOpen">
+    <span></span><span></span><span></span>
+  </button>
 </div>
 
-<div class="mobile-menu" [class.open]="isMobileMenuOpen">
-  <button class="close-btn" (click)="toggleMenu()">×</button>
 
+<!-- Overlay -->
+<div class="menu-overlay" [class.open]="isMobileMenuOpen" (click)="toggleMenu()"></div>
+
+<!-- Mobile Drawer -->
+<aside class="mobile-menu" [class.open]="isMobileMenuOpen" role="dialog" aria-modal="true">
+  <button class="close-btn" (click)="toggleMenu()" aria-label="Close menu">×</button>
   <ul>
-    <li><a routerLink="/about" (click)="toggleMenu()">About Us</a></li>
-    <li><a routerLink="/markets" (click)="toggleMenu()">Markets</a></li>
-    <li><a routerLink="/impact" (click)="toggleMenu()">Impact</a></li>
-    <li><a routerLink="/why" (click)="toggleMenu()">Culture</a></li>
-    <!-- <li><a routerLink="/blog" (click)="toggleMenu()">Blog</a></li> -->
-    <li><a routerLink="/team" (click)="toggleMenu()">Team</a></li>
-    <li><a routerLink="/contact" (click)="toggleMenu()">Contact us</a></li>
+    <li *ngFor="let link of [
+        {text: 'About', route: '/about'},
+        {text: 'Markets', route: '/markets'},
+        {text: 'Impact', route: '/impact'},
+        {text: 'Why ABC?', route: '/why'},
+        {text: 'Team', route: '/team'},
+        {text: 'Contact', route: '/contact', cta: true}
+      ]; let i = index"
+      [style.animationDelay]="(i * 0.08) + 's'">
+      <a [routerLink]="link.route" [class.cta]="link.cta" (click)="toggleMenu()">{{ link.text }}</a>
+    </li>
   </ul>
 
-  <!-- Logo + Social Icons -->
   <div class="mobile-footer">
-    <a routerLink="/">
-      <img src="assets/logo.png" alt="Stony Point Logo" class="mobile-logo" />
-    </a>
-
+    <a routerLink="/"><img src="assets/logo.png" alt="" class="mobile-logo"/></a>
     <div class="social-icons">
-      <i class="fab fa-facebook-f"></i>
-      <i class="fab fa-instagram"></i>
-      <i class="fab fa-linkedin"></i>
+      <a target="_blank" rel="noopener" aria-label="Facebook" href="https://www.facebook.com/abcgroupatl/"><i class="fab fa-facebook-f"></i></a>
+      <a target="_blank" rel="noopener" aria-label="Instagram" href="https://www.instagram.com/abcgroupatl/?hl=en"><i class="fab fa-instagram"></i></a>
+      <a target="_blank" rel="noopener" aria-label="LinkedIn" href="https://www.linkedin.com/company/abc-consultants-group-atl/"><i class="fab fa-linkedin"></i></a>
     </div>
   </div>
-</div>
-
+</aside>
 
 
 <div class="nav-accent-bar"></div>
-
-
-<!-- Bottom Navigation Bar -->
-

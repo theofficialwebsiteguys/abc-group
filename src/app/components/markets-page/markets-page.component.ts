@@ -3,10 +3,11 @@ import { CtaComponent } from '../cta/cta.component';
 import { DetailSectionComponent } from '../detail-section/detail-section.component';
 import { ServicesComponent } from '../services/services.component';
 import { TestimonialsComponent } from '../testimonials/testimonials.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-markets-page',
-  imports: [CtaComponent, DetailSectionComponent, TestimonialsComponent, ServicesComponent],
+  imports: [CtaComponent, DetailSectionComponent, TestimonialsComponent, ServicesComponent, CommonModule],
   templateUrl: './markets-page.component.html',
   styleUrl: './markets-page.component.scss'
 })
@@ -19,6 +20,39 @@ export class MarketsPageComponent {
 
   selectedState: any = null;
   shouldScrollToState = false;
+
+  markets = [
+    {      
+      title: 'Atlanta, GA',
+      description: 'Manager - Angel Jacome',
+      image: 'assets/markets/gerogia.png',
+      data: { name: 'Angel Jacome - Atlanta, GA', role: 'President & CEO', desc1: 'Established in 2011, ABC Consultants Group has established a strong reputation within the direct marketing industry. Through unwavering commitment and perseverance, ABC has expanded its operations to seven locations across the nation, with further expansion anticipated. Our primary objective is to deliver authentic and impactful branding solutions to our clients. We firmly believe that face-to-face interactions and engaging conversations are instrumental in cultivating profitable business relationships.', desc2: `At ABC Consultants Group, we are committed to providing boundless opportunities for individuals seeking success without limitations. We are dedicated to fostering a culture of hard work and perseverance, enabling our clients to achieve their desired outcomes through dedicated efforts.`, images: ['assets/markets/angel-jacome.png'] }
+    },
+    {
+      title: 'Dallas, TX',
+      description: 'Manager - Nishant Malik',
+      image: 'assets/markets/texas.jpg',
+      data: { name: 'Nishant Malik - Dallas, TX', role: 'President & CEO', desc1: 'Nishant grew up in India and was raised in a big, loving family. In the bustling streets and cricket fields of his hometown, Nishant discovered his passion that would shape his character and instill a profound appreciation for teamwork. He then embarked on a global adventure, studying in India and France before arriving in the USA in 2019. There, he immersed himself in the melting pot of cultures, embracing it and deciding that this is where he wants to continue the next chapter of his life.', desc2: `In 2020, Nishant kicked off his professional journey. Despite his success, he's stayed true to his roots, believing in community and helping others along the way. As he keeps rolling with life's punches, Nishant is grateful for where he's been and excited for what's ahead.`, images: ['assets/markets/nishant.png'] }
+    },
+    {
+      title: 'Raleigh, NC',
+      description: 'Manager - Jorge Ramirez',
+      image: 'assets/markets/nc.jpg',
+      data: { name: 'Jorge Ramirez - Raleigh, NC', role: 'CTO', desc1: 'Jorge grew up in Hermosillo, Sonora in Mexico before moving to Atlanta at the age of 10. He attended Reinhardt University and majored in marketing.  While in college he started a carpentry business to be able to pay for tuition and was able to graduate a year early to enter the work force', desc2: `Finding his entrepreneurial spirit early in life he knew he could never work in a regular 9-5. For a year and half he worked, learning the ins and outs of the marketing business until he branched out to Raleigh, NC.`, images: ['assets/markets/jorge.png'] }
+    },
+    {
+      title: 'Louisville, KY',
+      description: 'Manager - Stephen Oberbillig',
+      image: 'assets/markets/kentucky.jpg',
+      data: { name: 'Stephen Oberbillig - Louisville, KY', role: 'CFO', desc1: 'After moving to Atlanta in 2014, Stephen embarked on a career in personal training, drawn to the freedom and flexibility it offered. His passion for fitness never waned, but the entrepreneurial spirit soon took hold, inspiring him to expand his career into sales and consulting', desc2: `Balancing both worlds, Stephen found great success, and in 2016, he took the next step by branching out to Louisville, KY. When he's not focusing on his career, Stephen enjoys attending sporting events, hiking, fishing, and spending quality time with his Australian Shepherd, Ava, and his Doberman, Apollo. His dedication to both his professional and personal life continues to shape his thriving business ventures.`, images: ['assets/markets/stephen.png'] }  
+    },
+    {      
+      title: 'Evansville, IN',
+      description: 'Manager - Matt Singleton',
+      image: 'assets/markets/indiana.jpg',
+      data: { name: 'Matt Singleton - Evansville, IN', role: 'COO', desc1: 'Matt moved to Louisville, Ky to study Finance at the University of Louisville. After following advice from professors, Matt decided to gain experience in sales.', desc2: `After 2 enjoyable and successful years, Matt decided to open his own firm. When not working, Matt enjoys listening to podcasts, watching sports, working out, and anything outdoors.`, images: ['assets/markets/matt-s.png'] }
+    }
+  ];
 
   scrollToMarket(data: any) {
     // Prefer `data.name`, fallback to title or something else

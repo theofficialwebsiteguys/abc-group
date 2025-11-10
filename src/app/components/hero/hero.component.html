@@ -1,38 +1,43 @@
-<section class="hero-section">
-  <div class="bg-slideshow">
-    <img *ngFor="let image of bgImages; let i = index" [src]="image" [class.active]="i === currentImageIndex" />
+<section class="hero">
+  <!-- Background slideshow -->
+  <div class="bg">
+    <img *ngFor="let image of bgImages; let i = index"
+         [src]="image" [class.active]="i === currentImageIndex" alt=""/>
+    <div class="vignette"></div>
+    <div class="gradient"></div>
   </div>
 
-  <div class="overlay"></div>
+  <!-- Content -->
+  <div class="container">
+    <div class="copy">
+      <p class="kicker">Consulting • Growth • People</p>
 
-  <!-- Left Spiral-aligned Content -->
-  <div class="hero-content animated fade-in-up">
-    <h1>
-      <span class="nowrap">ABC Consultants Group</span> – Atlanta’s Trusted Partner
-    </h1>
-    <p>
-      Empowering businesses with tailored strategies and expert insights. Let our team help you achieve your goals.
-    </p>
-    <div class="hero-buttons">
-      <button class="btn primary" routerLink="/about">Learn More</button>
-      <button class="btn secondary" routerLink="/contact">Contact</button>
-    </div>
-  </div>
+      <h1>
+        <span class="accent">Atlanta’s Trusted</span><br/>
+        Consulting Partner
+      </h1>
 
-  <!-- Right Visual Hook (Golden Spiral endpoint) -->
-  <!-- Right Visual Hook (Golden Spiral endpoint) -->
-  <div class="hero-visual">
-   <div class="testimonial-card">
-      <div
-        *ngFor="let testimonial of testimonials; let i = index"
-        class="quote-block"
-        [class.active]="i === currentQuoteIndex"
-      >
-        <p class="quote">“{{ testimonial.quote }}”</p>
-        <p class="author">{{ testimonial.author }}</p>
+      <p class="sub">
+        We help brands scale with strategy, leadership development, and performance marketing.
+      </p>
+
+      <div class="cta-row">
+        <a routerLink="/contact" class="btn primary">Start a Project</a>
+        <a routerLink="/impact" class="btn ghost">See Our Impact</a>
       </div>
+
+      <ul class="quick-stats" aria-label="Company highlights">
+        <li><strong>200+</strong> partners</li>
+        <li><strong>10yrs</strong> of impact</li>
+        <li><strong>ROI</strong>-focused</li>
+      </ul>
     </div>
 
+    <aside class="card">
+      <div class="testimonial" *ngFor="let t of testimonials; let i = index" [class.active]="i===currentQuoteIndex">
+        <p class="quote">“{{t.quote}}”</p>
+        <p class="author">— {{t.author}}</p>
+      </div>
+    </aside>
   </div>
-
 </section>

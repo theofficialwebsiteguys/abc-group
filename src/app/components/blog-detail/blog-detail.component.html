@@ -1,21 +1,32 @@
-<section class="blog-section">
-  <!-- Top Header -->
-  <div class="blog-header">
-    <button class="back-btn" (click)="goBack()">← Back</button>
-    <h1>June 25, 2024</h1>
+<section class="blog-detail">
+  <!-- Header Section -->
+  <header class="blog-header fade-up">
+    <button class="back-btn" (click)="goBack()">← Back to Blog</button>
+    <h1 class="blog-title">{{ title || 'Unlocking Potential: Angel’s Journey to Organizational Consultant' }}</h1>
+    <p class="blog-date">{{ date || 'June 25, 2024' }}</p>
     <p class="blog-intro">
-      READ MORE ABOUT ANGEL’S STORY AND WHAT INSPIRED HIM TO GET PROMOTED TO ORGANIZATIONAL CONSULTANT!
+      {{ intro || "Read more about Angel’s story and what inspired him to get promoted to Organizational Consultant!" }}
     </p>
-  </div>
+  </header>
 
-  <!-- Blog Posts -->
-  <div *ngFor="let post of blogPosts; let i = index" class="blog-entry" [ngClass]="{ 'reverse': i % 2 !== 0 }">
-    <div class="blog-image">
-      <img [src]="post.image" [alt]="post.heading" />
-    </div>
-    <div class="blog-content">
-      <h3>{{ post.heading }}</h3>
-      <p class="sub">{{ post.subheading }}</p>
-    </div>
-  </div>
+  <!-- Content Section -->
+  <section class="blog-body">
+    <article
+      *ngFor="let post of blogPosts; let i = index"
+      class="blog-block fade-up"
+      [ngClass]="{ reverse: i % 2 !== 0 }"
+    >
+      <div class="blog-image">
+        <img [src]="post.image" [alt]="post.heading" />
+      </div>
+
+      <div class="blog-text">
+        <h3>{{ post.heading }}</h3>
+        <p class="sub">{{ post.subheading }}</p>
+        <p class="desc">
+          {{ post.description  }}
+        </p>
+      </div>
+    </article>
+  </section>
 </section>

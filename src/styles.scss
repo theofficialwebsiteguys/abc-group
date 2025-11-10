@@ -1,5 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+/* Import at the very top of styles.scss */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Apply globally */
+:root {
+  --font-primary: "Roboto Condensed", sans-serif;
+}
+
 body {
-  font-family: "Merriweather Sans", sans-serif;
+  font-family: var(--font-primary);
+  color: #111;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0.01em;
   margin: 0;
+}
+
+
+
+:root {
+  /* === Brand Greens (deeper & more sophisticated) === */
+  --brand-900: #031d0e; /* almost forest black-green */
+  --brand-700: #0c5824; /* deep emerald tone */
+  --brand-600: #0f6b2d; /* strong mid-dark green */
+  --brand-500: #15853a; /* vivid but mature */
+  --brand-400: #2ea85a; /* accent green for highlights */
+
+  /* === Neutral “Ink” Shades (for text/UI) === */
+  --ink-900: #0a0d10;   /* near-black for headlines */
+  --ink-700: #202428;   /* dark gray for body text */
+  --ink-500: #4b5056;   /* medium-gray for muted text */
+
+  /* === Surfaces & Effects === */
+  --surface: #f9fafb;   /* slightly off-white for warmth */
+  --glass-bg: rgba(18, 20, 22, 0.55); /* darker glass for better contrast */
+  --blur: 12px;
+  --radius: 14px;
+
+  /* === Shadows (richer contrast) === */
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.25);
 }

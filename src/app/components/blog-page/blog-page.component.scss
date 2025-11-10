@@ -1,0 +1,99 @@
+.blog-section {
+  padding: clamp(3rem, 6vw, 6rem) clamp(1rem, 5vw, 4rem);
+  background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+  text-align: center;
+
+  .blog-header {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+
+    .section-label {
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--brand-600);
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--ink-900);
+      margin-bottom: 0.25rem;
+    }
+
+    .post-date {
+      color: var(--ink-600);
+      font-size: 0.95rem;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+  }
+
+  .blog-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(2rem, 4vw, 3rem);
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+
+    .blog-image {
+      flex: 1 1 45%;
+      img {
+        width: 100%;
+        border-radius: 18px;
+        object-fit: cover;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+        &:hover {
+          transform: scale(1.02);
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+      }
+    }
+
+    .blog-text {
+      flex: 1 1 50%;
+      text-align: left;
+
+      p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--ink-700);
+        margin-bottom: 1.2rem;
+      }
+
+      .btn.primary {
+        display: inline-block;
+        padding: 0.9rem 1.75rem;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--brand-600), var(--brand-400));
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(0, 135, 37, 0.3);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .blog-content {
+      flex-direction: column;
+      .blog-text {
+        text-align: center;
+      }
+    }
+  }
+}

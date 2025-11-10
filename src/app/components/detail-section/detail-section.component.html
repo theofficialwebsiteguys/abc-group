@@ -1,22 +1,23 @@
-<section class="highlight-section" [ngClass]="{ 'reverse': !imageLeft }" [ngClass]="[background, imageLeft ? 'normal' : 'reverse']"
->
-<div class="highlight-image fade-carousel">
-  <div class="image-frame">
+<section class="mission-banner" [ngClass]="background">
+  <div class="mission-bg">
     <img
       *ngFor="let img of imageUrls; let i = index"
       [src]="img"
-      [alt]="'Image ' + i"
+      [alt]="'Mission image ' + i"
       [class.active]="i === currentIndex"
     />
+    <div class="overlay"></div>
   </div>
-</div>
 
+  <div class="mission-content">
+    <div class="inner">
+      <h2>{{ title }}</h2>
+      <p class="lead">{{ description }}</p>
+      <p class="lead">{{ description2 }}</p>
 
-
-  <div class="highlight-content">
-    <h2>{{ title }}</h2>
-    <p>{{ description }}</p>
-    <p>{{ description2 }}</p>
-    <a class="cta-button" [routerLink]="ctaLink" *ngIf="ctaLabel">{{ ctaLabel }}</a>
+      <a *ngIf="ctaLabel" [routerLink]="ctaLink" class="btn primary">
+        {{ ctaLabel }}
+      </a>
+    </div>
   </div>
 </section>
