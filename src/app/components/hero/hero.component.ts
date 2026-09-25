@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { APPLY_URL } from '../../apply-link';
 
 @Component({
   selector: 'app-hero',
@@ -10,8 +9,6 @@ import { APPLY_URL } from '../../apply-link';
   styleUrl: './hero.component.scss'
 })
 export class HeroComponent implements OnInit, OnDestroy {
-  applyUrl = APPLY_URL;
-
   bgImages: string[] = [
     'assets/banners/hero-banner1.jpg',
     'assets/banners/hero-banner6.png',

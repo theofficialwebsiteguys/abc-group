@@ -19,22 +19,19 @@ describe('NextStepsComponent', () => {
     fixture.detectChanges();
   });
 
+  const linkTo = (label: RegExp) =>
+    Array.from<HTMLAnchorElement>(fixture.nativeElement.querySelectorAll('a'))
+      .find(a => label.test(a.textContent || ''))?.getAttribute('href');
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('never sends an Apply button to the contact form', () => {
-    const links: HTMLAnchorElement[] = Array.from(fixture.nativeElement.querySelectorAll('a'));
-    const apply = links.filter(a => /apply/i.test(a.textContent || ''));
-
-    apply.forEach(a => expect(a.getAttribute('href')).not.toBe('/contact'));
-    expect(apply.length).toBe(component.applyUrl ? 1 : 0);
+  it('sends applicants to the contact form', () => {
+    expect(linkTo(/apply today/i)).toBe('/contact');
   });
 
   it('keeps Schedule Call on the contact page', () => {
-    const schedule = Array.from<HTMLAnchorElement>(fixture.nativeElement.querySelectorAll('a'))
-      .find(a => /schedule call/i.test(a.textContent || ''));
-
-    expect(schedule?.getAttribute('href')).toBe('/contact');
+    expect(linkTo(/schedule call/i)).toBe('/contact');
   });
 });

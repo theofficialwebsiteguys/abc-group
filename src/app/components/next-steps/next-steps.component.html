@@ -1,5 +1,5 @@
-<section class="next-steps" [class.single]="!applyUrl">
-  <article class="path apply" *ngIf="applyUrl">
+<section class="next-steps">
+  <article class="path apply">
     <div class="path-inner">
       <p class="ui-kicker ui-kicker--light">For Applicants</p>
       <h2>Join ABC Group</h2>
@@ -9,7 +9,7 @@
         they seek!
       </p>
       <div class="actions">
-        <a [href]="applyUrl" class="ui-btn ui-btn--white">Apply Today <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        <a routerLink="/contact" class="ui-btn ui-btn--white">Apply Today <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         <a routerLink="/why" class="ui-btn ui-btn--light">Why ABC?</a>
       </div>
     </div>

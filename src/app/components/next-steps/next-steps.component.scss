@@ -5,30 +5,6 @@
 .next-steps {
   display: grid;
   grid-template-columns: 1fr 1fr;
-
-  &.single {
-    grid-template-columns: 1fr;
-
-    .path {
-      align-items: center;
-    }
-
-    .path-inner {
-      margin-inline: auto;
-      text-align: center;
-    }
-
-    .ui-kicker::after {
-      content: "";
-      width: 2.75rem;
-      height: 2px;
-      background: currentColor;
-    }
-
-    .actions {
-      justify-content: center;
-    }
-  }
 }
 
 .path {

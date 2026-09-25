@@ -59,6 +59,13 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "pages": {
+              "outputPath": {
+                "base": "docs",
+                "browser": ""
+              },
+              "baseHref": "/abc-group/"
             }
           },
           "defaultConfiguration": "production"

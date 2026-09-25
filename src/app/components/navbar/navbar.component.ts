@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { APPLY_URL } from '../../apply-link';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +9,6 @@ import { APPLY_URL } from '../../apply-link';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
-  applyUrl = APPLY_URL;
   isMobileMenuOpen = false;
 
   links = [

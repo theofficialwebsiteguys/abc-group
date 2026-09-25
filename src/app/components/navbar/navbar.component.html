@@ -30,14 +30,11 @@
   <nav class="main-nav" aria-label="Main">
     <ul>
       <li *ngFor="let link of links"><a [routerLink]="link.route" routerLinkActive="active">{{ link.text }}</a></li>
-      <li *ngIf="applyUrl"><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
     </ul>
   </nav>
 
-  <a *ngIf="applyUrl; else contactCta" [href]="applyUrl" class="nav-cta">Apply Today <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-  <ng-template #contactCta>
-    <a routerLink="/contact" class="nav-cta">Contact Us <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-  </ng-template>
+  <a routerLink="/contact" class="nav-cta">Apply Today <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
 
   <button class="hamburger"
           [class.open]="isMobileMenuOpen"
@@ -59,7 +56,7 @@
     <li><a routerLink="/contact" routerLinkActive="active" (click)="toggleMenu()">Contact</a></li>
   </ul>
 
-  <a *ngIf="applyUrl" [href]="applyUrl" class="ui-btn ui-btn--solid drawer-cta">Apply Today <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+  <a routerLink="/contact" class="ui-btn ui-btn--solid drawer-cta" (click)="toggleMenu()">Apply Today <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
 
   <div class="drawer-footer">
     <a href="tel:+16788797278"><i class="fa-solid fa-phone" aria-hidden="true"></i> (678) 879–7278</a>
