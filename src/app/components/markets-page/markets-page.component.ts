@@ -4,10 +4,11 @@ import { DetailSectionComponent } from '../detail-section/detail-section.compone
 import { ServicesComponent } from '../services/services.component';
 import { TestimonialsComponent } from '../testimonials/testimonials.component';
 import { CommonModule } from '@angular/common';
+import { NextStepsComponent } from '../next-steps/next-steps.component';
 
 @Component({
   selector: 'app-markets-page',
-  imports: [CtaComponent, DetailSectionComponent, TestimonialsComponent, ServicesComponent, CommonModule],
+  imports: [CtaComponent, DetailSectionComponent, TestimonialsComponent, ServicesComponent, CommonModule, NextStepsComponent],
   templateUrl: './markets-page.component.html',
   styleUrl: './markets-page.component.scss'
 })

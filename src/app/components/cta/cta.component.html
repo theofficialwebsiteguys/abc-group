@@ -1,46 +1,15 @@
 <section
-  class="cta-section"
-  [ngStyle]="{ 'background-image': 'url(' + backgroundImage + ')' }"
+  class="page-banner"
+  [ngStyle]="{ 'background-image': backgroundImage ? 'url(' + backgroundImage + ')' : 'none' }"
 >
-  <!-- Overlays -->
-  <div class="vignette"></div>
-  <div class="gradient"></div>
+  <div class="ui-container">
+    <p class="crumbs"><a routerLink="/">Home</a><span aria-hidden="true">/</span>{{ title }}</p>
+    <h1>{{ title }}</h1>
+    <p *ngIf="description" class="sub">{{ description }}</p>
 
-  <!-- Main Container -->
-  <div class="cta-container">
-    <div class="cta-copy">
-      <h1>
-        <span class="accent">{{ title }}</span>
-      </h1>
-
-      <p *ngIf="description" class="sub">{{ description }}</p>
-
-      <div class="cta-row" *ngIf="primaryButtonText || secondaryButtonText">
-        <a
-          *ngIf="primaryButtonText"
-          routerLink="/contact"
-          class="btn primary"
-          >{{ primaryButtonText }}</a
-        >
-        <a
-          *ngIf="secondaryButtonText"
-          routerLink="/about"
-          class="btn ghost"
-          >{{ secondaryButtonText }}</a
-        >
-      </div>
+    <div class="cta-row" *ngIf="primaryButtonText || secondaryButtonText">
+      <a *ngIf="primaryButtonText" routerLink="/contact" class="ui-btn ui-btn--solid">{{ primaryButtonText }}</a>
+      <a *ngIf="secondaryButtonText" routerLink="/about" class="ui-btn ui-btn--light">{{ secondaryButtonText }}</a>
     </div>
-
-    <!-- 💬 Testimonial Card -->
-    <aside class="testimonial-card" *ngIf="testimonials?.length">
-      <div
-        class="testimonial"
-        *ngFor="let t of testimonials; let i = index"
-        [class.active]="i === currentQuoteIndex"
-      >
-        <p class="quote">“{{ t.quote }}”</p>
-        <p class="author">— {{ t.author }}</p>
-      </div>
-    </aside>
   </div>
 </section>

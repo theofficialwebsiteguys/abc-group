@@ -1,15 +1,23 @@
-<footer class="footer-section dark">
-  <div class="footer-grid">
-    <div class="logo-area">
-      <a routerLink="/">
-        <img src="assets/logo.png" alt="ABC Consultants Group Logo" class="logo" />
+<footer class="site-footer">
+  <div class="ui-container footer-top">
+    <div class="footer-brand">
+      <a routerLink="/" class="brand" aria-label="ABC Consultants Group home">
+        <img src="assets/logo.png" alt="" class="logo" />
+        <span class="wordmark">ABC <small>Consultants Group</small></span>
       </a>
+      <p class="tagline">Growing Business By Growing People</p>
+      <div class="social">
+        <a target="_blank" rel="noopener" aria-label="Facebook" href="https://www.facebook.com/abcgroupatl/"><i class="fa-brands fa-facebook-f"></i></a>
+        <a target="_blank" rel="noopener" aria-label="Instagram" href="https://www.instagram.com/abcgroupatl/?hl=en"><i class="fa-brands fa-instagram"></i></a>
+        <a target="_blank" rel="noopener" aria-label="LinkedIn" href="https://www.linkedin.com/company/abc-consultants-group-atl/"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
     </div>
 
     <div class="footer-col">
       <h4>Quick Links</h4>
       <ul>
         <li><a routerLink="/about">About Us</a></li>
+        <li><a routerLink="/markets">Markets</a></li>
         <li><a routerLink="/impact">Impact</a></li>
         <li><a routerLink="/why">Why ABC?</a></li>
         <li><a routerLink="/blog">Blog</a></li>
@@ -20,6 +28,10 @@
 
     <div class="footer-col">
       <h4>Contact</h4>
+      <ul class="contact-list">
+        <li><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:+16788797278">(678) 879–7278</a></li>
+        <li><i class="fa-regular fa-envelope" aria-hidden="true"></i><a href="mailto:hr&#64;abcgroupatl.com">hr&#64;abcgroupatl.com</a></li>
+      </ul>
       <p class="small-text">
         Have a project or opportunity in mind?<br />
         <a routerLink="/contact" class="contact-link">Get in touch →</a>
@@ -28,25 +40,9 @@
   </div>
 
   <div class="footer-bottom">
-    <p>
-      © 2024 ABC Group. All rights reserved. ·
-      <a routerLink="/">Privacy Policy</a> ·
-      <a routerLink="/">Terms of Service</a>
-    </p>
-
-    <div class="social-icons">
-      <a target="_blank" href="https://www.facebook.com/abcgroupatl/">
-        <i class="fa-brands fa-facebook-f"></i>
-      </a>
-      <a target="_blank" href="https://www.instagram.com/abcgroupatl/?hl=en">
-        <i class="fa-brands fa-instagram"></i>
-      </a>
-      <a
-        target="_blank"
-        href="https://www.linkedin.com/company/abc-consultants-group-atl/"
-      >
-        <i class="fa-brands fa-linkedin-in"></i>
-      </a>
+    <div class="ui-container bottom-inner">
+      <p>© {{ year }} ABC Group. All rights reserved.</p>
+      <p><a routerLink="/">Privacy Policy</a> · <a routerLink="/">Terms of Service</a></p>
     </div>
   </div>
 </footer>

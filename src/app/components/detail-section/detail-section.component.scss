@@ -1,180 +1,103 @@
-.mission-banner {
-  position: relative;
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  overflow: hidden;
-  text-align: center;
-  isolation: isolate;
+:host {
+  display: block;
+}
 
-  /* === Background Image === */
-  .mission-bg {
+/* Photo on one half, copy on a solid panel on the other */
+.detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: clamp(460px, 62vh, 640px);
+}
+
+.media {
+  position: relative;
+  overflow: hidden;
+  background: var(--brand-900);
+
+  img {
     position: absolute;
     inset: 0;
-    z-index: 0;
-    overflow: hidden;
-
-    img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transform: scale(1.05);
-      transition: opacity 1.2s ease-in-out, transform 12s ease;
-      filter: brightness(0.55) contrast(1.1);
-    }
-
-    img.active {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.65) 0%,
-        rgba(0, 0, 0, 0.8) 60%,
-        rgba(0, 0, 0, 0.85) 100%
-      );
-      z-index: 1;
-    }
-  }
-
-  /* === Content === */
-  .mission-content {
-    position: relative;
-    z-index: 2;
-    padding: clamp(4rem, 8vw, 6rem) 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
 
-    .inner {
-      max-width: 900px;
-      animation: fadeUp 1s ease forwards;
-    }
-
-    .eyebrow {
-      text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      color: var(--brand-300);
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-
-    h2 {
-      font-size: clamp(2.2rem, 5vw, 3rem);
-      font-weight: 800;
-      margin-bottom: 1.25rem;
-      background: linear-gradient(90deg, var(--brand-400), #fff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      line-height: 1.2;
-    }
-
-    .lead {
-      font-size: clamp(1.1rem, 1.4vw, 1.35rem);
-      line-height: 1.8;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.92);
-      margin-bottom: 2rem;
-    }
-
-    .body {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      max-width: 700px;
-      margin-inline: auto;
-      color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 2rem;
-    }
-
-    .btn.primary {
-      background: linear-gradient(90deg, var(--brand-600), var(--brand-400));
-      color: #fff;
-      border-radius: 999px;
-      font-weight: 700;
-      text-transform: uppercase;
-      padding: 0.9rem 2rem;
-      text-decoration: none;
-      letter-spacing: 0.03em;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 25px rgba(0, 135, 37, 0.4);
-      margin: 10px;
-
-      &:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 14px 40px rgba(0, 135, 37, 0.55);
-      }
-    }
-  }
-
-  /* === Optional Background Variants === */
-  &.green .mission-bg .overlay {
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 50, 0, 0.6),
-      rgba(0, 20, 0, 0.85)
-    );
-  }
-
-  &.dark .mission-bg .overlay {
-    background: linear-gradient(
-      to bottom,
-      rgba(10, 10, 10, 0.7),
-      rgba(0, 0, 0, 0.9)
-    );
-  }
-
-  &.light .mission-bg .overlay {
-    background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0.5)
-    );
-  }
-
-  /* === Animations === */
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    to {
+    &.active {
       opacity: 1;
-      transform: translateY(0);
     }
   }
+}
 
-  /* === Responsive === */
-  @media (max-width: 768px) {
-    min-height: 70vh;
-    .mission-content {
-      text-align: center;
-      padding: 3rem 1.25rem;
-    }
-    h2 {
-      font-size: 2rem;
-    }
-    .lead {
-      font-size: 1rem;
-    }
-    .body {
-      font-size: 0.95rem;
-    }
-    .btn {
-      width: 100%;
-      max-width: 280px;
-    }
+.image-right .media {
+  order: 2;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  padding: clamp(3rem, 7vw, 6rem) clamp(1.5rem, 6vw, 5.5rem);
+}
+
+.inner {
+  max-width: 36rem;
+}
+
+h2 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  line-height: 1.1;
+}
+
+p {
+  margin: 0 0 1.25rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.ui-btn {
+  margin-top: 1rem;
+}
+
+.green .content {
+  background: linear-gradient(160deg, var(--brand-700), var(--brand-800));
+  color: rgba(255, 255, 255, 0.88);
+
+  h2 {
+    color: #fff;
+  }
+}
+
+.dark .content {
+  background: var(--brand-900);
+  color: rgba(255, 255, 255, 0.82);
+
+  h2 {
+    color: #fff;
+  }
+}
+
+.light .content {
+  background: var(--brand-50);
+  color: var(--ink-600);
+
+  h2 {
+    color: var(--ink-900);
+  }
+}
+
+@media (max-width: 900px) {
+  .detail {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .media {
+    aspect-ratio: 16 / 10;
+  }
+
+  .image-right .media {
+    order: 0;
   }
 }

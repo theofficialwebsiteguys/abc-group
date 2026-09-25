@@ -1,5 +1,5 @@
 .blog-detail {
-  padding: clamp(10rem, 16vw, 16rem) clamp(2rem, 10vw, 6rem);
+  padding: clamp(4rem, 8vw, 6rem) clamp(1rem, 6vw, 4rem);
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -78,7 +78,7 @@
       .blog-image {
         flex: 1;
         overflow: hidden;
-        border-radius: 18px;
+        border-radius: var(--radius-sm);
         box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
         transition: transform 0.4s ease;
 

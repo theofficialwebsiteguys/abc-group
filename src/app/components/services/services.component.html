@@ -1,70 +1,34 @@
-<section
-  class="services-section"
-  [ngClass]="{ 'compact': services.length === 0 && !buttonLabel }"
->
-
-  <div class="services-header">
-    <p class="section-label">{{ sectionLabel }}</p>
-    <h2>{{ sectionTitle }}</h2>
-    <p class="section-subtext">{{ sectionSubtext }}</p>
+<section class="services-section">
+  <div class="services-band">
+    <div class="services-header">
+      <p class="ui-kicker ui-kicker--center" *ngIf="sectionLabel">{{ sectionLabel }}</p>
+      <h2 class="ui-title">{{ sectionTitle }}</h2>
+      <p class="section-subtext" *ngIf="sectionSubtext">{{ sectionSubtext }}</p>
+    </div>
   </div>
 
   <div class="services-cards">
-   <div
-  class="service-card"
-  *ngFor="let service of services"
-  [class.clickable]="!!service.data"
-  [style.backgroundImage]="service.image ? 'url(' + service.image + ')' : 'none'"
-  (click)="service.data && onSelect(service.data)"
->
-  <!-- Dark overlay -->
-  <div class="overlay"></div>
-
-  <!-- Static content (always visible) -->
-  <div class="static-content">
-    <div class="icon">
-     <ng-container [ngSwitch]="service.iconType">
-        <!-- If it's an image icon -->
-        <img *ngSwitchCase="'image'" [src]="service.icon" alt="Service Icon" />
-
-        <!-- If it's a Font Awesome icon -->
-        <i *ngSwitchCase="'fa'" [class]="service.icon" aria-hidden="true"></i>
-
-        <!-- Default to text/emoji icon -->
-        <span *ngSwitchDefault>{{ service.icon }}</span>
-      </ng-container>
-      <ng-template #textIcon>{{ service.icon }}</ng-template>
-    </div>
-    <h3 [innerHTML]="service.title"></h3>
-  </div>
-
-  <!-- Hover content -->
-  <div class="hover-reveal">
-   <div class="static-content-hover">
-    <div class="icon">
-     <ng-container [ngSwitch]="service.iconType">
-        <!-- If it's an image icon -->
-        <img *ngSwitchCase="'image'" [src]="service.icon" alt="Service Icon" />
-
-        <!-- If it's a Font Awesome icon -->
-        <i *ngSwitchCase="'fa'" [class]="service.icon" aria-hidden="true"></i>
-
-        <!-- Default to text/emoji icon -->
-        <span *ngSwitchDefault>{{ service.icon }}</span>
-      </ng-container>
-      <ng-template #textIcon>{{ service.icon }}</ng-template>
-    </div>
-    <h3 [innerHTML]="service.title"></h3>
-  </div>
-    <p>{{ service.description }}</p>
-  </div>
-</div>
-
-
-
+    <article
+      class="service-card"
+      *ngFor="let service of services"
+      [class.clickable]="!!service.data"
+      (click)="service.data && onSelect(service.data)"
+    >
+      <div class="media" [style.backgroundImage]="service.image ? 'url(' + service.image + ')' : 'none'">
+        <span class="icon" [ngSwitch]="service.iconType">
+          <img *ngSwitchCase="'image'" [src]="service.icon" alt="" />
+          <i *ngSwitchCase="'fa'" [class]="service.icon" aria-hidden="true"></i>
+          <span *ngSwitchDefault>{{ service.icon }}</span>
+        </span>
+      </div>
+      <div class="body">
+        <h3 [innerHTML]="service.title"></h3>
+        <p>{{ service.description }}</p>
+      </div>
+    </article>
   </div>
 
   <div class="services-buttons" *ngIf="buttonLabel">
-    <a [routerLink]="buttonLink" class="btn secondary">{{ buttonLabel }}</a>
+    <a [routerLink]="buttonLink" class="ui-btn ui-btn--outline">{{ buttonLabel }} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
   </div>
 </section>

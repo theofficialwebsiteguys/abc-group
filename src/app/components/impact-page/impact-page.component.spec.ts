@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 
 import { ImpactPageComponent } from './impact-page.component';
 
@@ -8,7 +9,8 @@ describe('ImpactPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ImpactPageComponent]
+      imports: [ImpactPageComponent],
+      providers: [provideRouter([])]
     })
     .compileComponents();
 

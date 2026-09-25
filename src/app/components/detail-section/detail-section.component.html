@@ -1,23 +1,26 @@
-<section class="mission-banner" [ngClass]="background">
-  <div class="mission-bg">
+<section class="detail" [ngClass]="[background, imageLeft ? 'image-left' : 'image-right']">
+  <div class="media">
     <img
       *ngFor="let img of imageUrls; let i = index"
       [src]="img"
-      [alt]="'Mission image ' + i"
+      [alt]="title"
       [class.active]="i === currentIndex"
     />
-    <div class="overlay"></div>
   </div>
 
-  <div class="mission-content">
+  <div class="content">
     <div class="inner">
       <h2>{{ title }}</h2>
-      <p class="lead">{{ description }}</p>
-      <p class="lead">{{ description2 }}</p>
+      <p *ngIf="description">{{ description }}</p>
+      <p *ngIf="description2">{{ description2 }}</p>
 
-      <a *ngIf="ctaLabel" [routerLink]="ctaLink" class="btn primary">
-        {{ ctaLabel }}
-      </a>
+      <a
+        *ngIf="ctaLabel"
+        [routerLink]="ctaLink"
+        class="ui-btn"
+        [class.ui-btn--white]="background === 'green'"
+        [class.ui-btn--solid]="background !== 'green'"
+      >{{ ctaLabel }} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
     </div>
   </div>
 </section>

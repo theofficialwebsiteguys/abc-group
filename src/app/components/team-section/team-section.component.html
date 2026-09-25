@@ -1,0 +1,25 @@
+<section class="team-section">
+  <div class="team-header">
+    <p class="ui-kicker ui-kicker--center">Leadership & Growth</p>
+    <h2 class="ui-title">Meet the Visionaries Behind ABC Group</h2>
+    <p class="section-subtext">
+      Our leadership team brings together experience, innovation, and mentorship —
+      shaping future leaders and driving success nationwide.
+    </p>
+  </div>
+
+  <ul class="team-grid">
+    <li class="team-card" *ngFor="let member of team">
+      <div class="photo">
+        <img *ngIf="member.image; else initialsPlaceholder" [src]="member.image" [alt]="member.name" loading="lazy" />
+        <ng-template #initialsPlaceholder>
+          <span class="initials" aria-hidden="true">{{ initials(member.name) }}</span>
+        </ng-template>
+      </div>
+      <div class="plate">
+        <h3>{{ member.name }}</h3>
+        <p class="title" *ngIf="member.title">{{ member.title }}</p>
+      </div>
+    </li>
+  </ul>
+</section>

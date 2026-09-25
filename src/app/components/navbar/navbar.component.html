@@ -1,62 +1,44 @@
-<!-- ===== Top Bar ===== -->
-<div class="top-bar">
-  <div class="bar-container">
-    <div class="left-info">
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-solid fa-star"></i>
-      <i class="fa-regular fa-star-half-stroke"></i>
-      <span class="review-text">Rated 4.9 / 5 from partners nationwide</span>
-    </div>
+<!-- ===== Utility Bar ===== -->
+<div class="utility-bar">
+  <div class="ui-container utility-inner">
+    <p class="rating">
+      <span class="stars" aria-hidden="true">
+        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i>
+      </span>
+      Rated 4.9 / 5 from partners nationwide
+    </p>
 
-    <div class="right-info">
-      <div class="social-icons">
-        <a target="_blank" aria-label="Facebook" href="https://www.facebook.com/abcgroupatl/"><i class="fab fa-facebook-f"></i></a>
-        <a target="_blank" aria-label="Instagram" href="https://www.instagram.com/abcgroupatl/?hl=en"><i class="fab fa-instagram"></i></a>
-        <a target="_blank" aria-label="LinkedIn" href="https://www.linkedin.com/company/abc-consultants-group-atl/"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-
-      <span class="divider"></span>
-
-      <a href="mailto:info&#64;abcgroupatl.com" class="contact-link">
-        <i class="fa-regular fa-envelope"></i> info&#64;abcgroupatl.com
-      </a>
+    <div class="utility-links">
+      <a href="tel:+16788797278"><i class="fa-solid fa-phone" aria-hidden="true"></i> (678) 879–7278</a>
+      <a href="mailto:hr&#64;abcgroupatl.com"><i class="fa-regular fa-envelope" aria-hidden="true"></i> hr&#64;abcgroupatl.com</a>
+      <span class="social">
+        <a target="_blank" rel="noopener" aria-label="Facebook" href="https://www.facebook.com/abcgroupatl/"><i class="fab fa-facebook-f"></i></a>
+        <a target="_blank" rel="noopener" aria-label="Instagram" href="https://www.instagram.com/abcgroupatl/?hl=en"><i class="fab fa-instagram"></i></a>
+        <a target="_blank" rel="noopener" aria-label="LinkedIn" href="https://www.linkedin.com/company/abc-consultants-group-atl/"><i class="fab fa-linkedin-in"></i></a>
+      </span>
     </div>
   </div>
 </div>
 
+<!-- ===== Main Bar ===== -->
+<header class="main-bar">
+  <a routerLink="/" class="brand" aria-label="ABC Consultants Group home">
+    <img src="assets/logo.png" alt="" class="logo" />
+    <span class="wordmark">ABC <small>Consultants Group</small></span>
+  </a>
 
-<div class="top-header" [class.is-scrolled]="scrolled"  [class.light-route]="isLightRoute">
-  <div class="logo-area">
-    <a routerLink="/" aria-label="ABC Consultants Group home">
-      <img src="assets/logo.png" alt="" class="logo"/>
-    </a>
-  </div>
-
-  <!-- Desktop Nav -->
-  <nav class="main-nav" *ngIf="!isMobileMenuOpen">
+  <nav class="main-nav" aria-label="Main">
     <ul>
-      <li><a routerLink="/about" routerLinkActive="active" aria-current="page">About</a></li>
-      <li><a routerLink="/markets" routerLinkActive="active">Markets</a></li>
-      <li><a routerLink="/impact" routerLinkActive="active">Impact</a></li>
-      <li><a routerLink="/why" routerLinkActive="active">Why ABC?</a></li>
-      <li><a routerLink="/blog" routerLinkActive="active">Blog</a></li>
-      <li><a routerLink="/team" routerLinkActive="active">Team</a></li>
-      <li><a routerLink="/contact" class="cta">Contact</a></li>
+      <li *ngFor="let link of links"><a [routerLink]="link.route" routerLinkActive="active">{{ link.text }}</a></li>
+      <li *ngIf="applyUrl"><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- Social -->
-  <!-- <div class="top-right">
-    <div class="social-icons">
-      <a target="_blank" rel="noopener" aria-label="Facebook" href="https://www.facebook.com/abcgroupatl/"><i class="fab fa-facebook-f"></i></a>
-      <a target="_blank" rel="noopener" aria-label="Instagram" href="https://www.instagram.com/abcgroupatl/?hl=en"><i class="fab fa-instagram"></i></a>
-      <a target="_blank" rel="noopener" aria-label="LinkedIn" href="https://www.linkedin.com/company/abc-consultants-group-atl/"><i class="fab fa-linkedin"></i></a>
-    </div>
-  </div> -->
+  <a *ngIf="applyUrl; else contactCta" [href]="applyUrl" class="nav-cta">Apply Today <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+  <ng-template #contactCta>
+    <a routerLink="/contact" class="nav-cta">Contact Us <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+  </ng-template>
 
-  <!-- Hamburger (always in DOM for a11y) -->
   <button class="hamburger"
           [class.open]="isMobileMenuOpen"
           (click)="toggleMenu()"
@@ -64,38 +46,28 @@
           [attr.aria-expanded]="isMobileMenuOpen">
     <span></span><span></span><span></span>
   </button>
-</div>
-
+</header>
 
 <!-- Overlay -->
 <div class="menu-overlay" [class.open]="isMobileMenuOpen" (click)="toggleMenu()"></div>
 
 <!-- Mobile Drawer -->
-<aside class="mobile-menu" [class.open]="isMobileMenuOpen" role="dialog" aria-modal="true">
+<aside class="mobile-menu" [class.open]="isMobileMenuOpen" role="dialog" aria-modal="true" aria-label="Menu">
   <button class="close-btn" (click)="toggleMenu()" aria-label="Close menu">×</button>
   <ul>
-    <li *ngFor="let link of [
-        {text: 'About', route: '/about'},
-        {text: 'Markets', route: '/markets'},
-        {text: 'Impact', route: '/impact'},
-        {text: 'Why ABC?', route: '/why'},
-        {text: 'Team', route: '/team'},
-        {text: 'Contact', route: '/contact', cta: true}
-      ]; let i = index"
-      [style.animationDelay]="(i * 0.08) + 's'">
-      <a [routerLink]="link.route" [class.cta]="link.cta" (click)="toggleMenu()">{{ link.text }}</a>
-    </li>
+    <li *ngFor="let link of links"><a [routerLink]="link.route" routerLinkActive="active" (click)="toggleMenu()">{{ link.text }}</a></li>
+    <li><a routerLink="/contact" routerLinkActive="active" (click)="toggleMenu()">Contact</a></li>
   </ul>
 
-  <div class="mobile-footer">
-    <a routerLink="/"><img src="assets/logo.png" alt="" class="mobile-logo"/></a>
-    <div class="social-icons">
+  <a *ngIf="applyUrl" [href]="applyUrl" class="ui-btn ui-btn--solid drawer-cta">Apply Today <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+
+  <div class="drawer-footer">
+    <a href="tel:+16788797278"><i class="fa-solid fa-phone" aria-hidden="true"></i> (678) 879–7278</a>
+    <a href="mailto:hr&#64;abcgroupatl.com"><i class="fa-regular fa-envelope" aria-hidden="true"></i> hr&#64;abcgroupatl.com</a>
+    <div class="social">
       <a target="_blank" rel="noopener" aria-label="Facebook" href="https://www.facebook.com/abcgroupatl/"><i class="fab fa-facebook-f"></i></a>
       <a target="_blank" rel="noopener" aria-label="Instagram" href="https://www.instagram.com/abcgroupatl/?hl=en"><i class="fab fa-instagram"></i></a>
-      <a target="_blank" rel="noopener" aria-label="LinkedIn" href="https://www.linkedin.com/company/abc-consultants-group-atl/"><i class="fab fa-linkedin"></i></a>
+      <a target="_blank" rel="noopener" aria-label="LinkedIn" href="https://www.linkedin.com/company/abc-consultants-group-atl/"><i class="fab fa-linkedin-in"></i></a>
     </div>
   </div>
 </aside>
-
-
-<div class="nav-accent-bar"></div>

@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 
 import { WhyPageComponent } from './why-page.component';
 
@@ -8,7 +9,8 @@ describe('WhyPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WhyPageComponent]
+      imports: [WhyPageComponent],
+      providers: [provideRouter([])]
     })
     .compileComponents();
 

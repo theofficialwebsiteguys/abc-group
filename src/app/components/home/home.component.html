@@ -1,4 +1,30 @@
 <app-hero></app-hero>
+
+<!-- Who we are -->
+<section class="about-split">
+  <div class="statement-panel">
+    <img src="assets/logo.png" alt="" class="watermark" />
+    <p class="statement-lead">At ABC Consultants Group, we’re built on the foundation of</p>
+    <p class="statement-words">Mentorship,<br />Leadership,<br /><span>and Opportunity.</span></p>
+  </div>
+
+  <div class="text-panel">
+    <p class="ui-kicker">Who We Are</p>
+    <h2 class="ui-title">Our Mission</h2>
+    <p>
+      Our mission is to develop people — empowering every individual to reach their full potential
+      while driving lasting growth for our clients and communities.
+    </p>
+    <p>
+      By focusing our efforts on a face-to-face, relationship-based marketing approach, we are able
+      to bring our clients life-long customers with increased name-brand recognition and high levels
+      of customer loyalty.
+    </p>
+    <a routerLink="/about" class="ui-btn ui-btn--outline">More About Us <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+  </div>
+</section>
+
+<!-- What we do -->
 <app-services
   [sectionLabel]="'Solutions'"
   [sectionTitle]="'Growing Business By Growing People'"
@@ -29,15 +55,42 @@
     }
   ]"
 ></app-services>
+
+<!-- Growth: culture -->
+<section class="culture">
+  <div class="ui-container">
+    <div class="culture-head">
+      <div>
+        <p class="ui-kicker ui-kicker--light">Our Culture</p>
+        <h2 class="ui-title ui-title--light">Why ABC?</h2>
+        <p class="culture-lead">
+          We believe having a strong culture is what cultivates our business to come together to
+          learn from each others life experiences and strengths.
+        </p>
+      </div>
+      <a routerLink="/why" class="ui-btn ui-btn--light">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+
+    <div class="culture-cards">
+      <article class="culture-card" *ngFor="let item of culture">
+        <div class="media">
+          <img [src]="item.image" [alt]="item.title" loading="lazy" />
+          <h3>{{ item.title }}</h3>
+        </div>
+        <p>{{ item.text }}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- People -->
+<app-team-section></app-team-section>
+
 <app-testimonials
   [quote]="testimonial.quote"
   [name]="testimonial.name"
   [avatar]="testimonial.avatar"
 ></app-testimonials>
-<app-cta
-  [title]="'Partner With ABC Group'"
-  [description]="'Let’s schedule a call and explore how we can work together.'"
-  [primaryButtonText]="'Schedule Call'"
-  [secondaryButtonText]="'View Services'"
-  [backgroundImage]="'assets/banners/sub-banner1.jpg'"
-></app-cta>
+
+<!-- Next step -->
+<app-next-steps></app-next-steps>

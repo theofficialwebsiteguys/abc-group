@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 
 import { CtaComponent } from './cta.component';
 
@@ -8,7 +9,8 @@ describe('CtaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CtaComponent]
+      imports: [CtaComponent],
+      providers: [provideRouter([])]
     })
     .compileComponents();
 

@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { CtaComponent } from '../cta/cta.component';
 import { DetailSectionComponent } from '../detail-section/detail-section.component';
 import { TestimonialsComponent } from '../testimonials/testimonials.component';
+import { NextStepsComponent } from '../next-steps/next-steps.component';
 
 @Component({
   selector: 'app-why-page',
-  imports: [CtaComponent, DetailSectionComponent, TestimonialsComponent],
+  imports: [CtaComponent, DetailSectionComponent, TestimonialsComponent, NextStepsComponent],
   templateUrl: './why-page.component.html',
   styleUrl: './why-page.component.scss'
 })

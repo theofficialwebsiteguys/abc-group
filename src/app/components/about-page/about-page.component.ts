@@ -4,10 +4,11 @@ import { DetailSectionComponent } from '../detail-section/detail-section.compone
 import { TestimonialsComponent } from '../testimonials/testimonials.component';
 import { InfoBannerComponent } from '../info-banner/info-banner.component';
 import { ServicesComponent } from '../services/services.component';
+import { NextStepsComponent } from '../next-steps/next-steps.component';
 
 @Component({
   selector: 'app-about-page',
-  imports: [CtaComponent, DetailSectionComponent, TestimonialsComponent, ServicesComponent],
+  imports: [CtaComponent, DetailSectionComponent, TestimonialsComponent, ServicesComponent, NextStepsComponent],
   templateUrl: './about-page.component.html',
   styleUrl: './about-page.component.scss'
 })

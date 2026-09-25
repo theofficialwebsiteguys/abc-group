@@ -1,14 +1,11 @@
-<section class="testimonial-banner">
-  <blockquote class="quote fade-in">
-    <span class="quote-mark">“</span>
-    {{ quote }}
-    <span class="quote-mark">”</span>
+<section class="quote-band">
+  <span class="mark" aria-hidden="true">“</span>
+  <blockquote>
+    <p>{{ quote }}</p>
   </blockquote>
 
   <div class="client">
     <img [src]="avatar" [alt]="name" />
-    <div class="client-text">
-      <span class="name">{{ name }}</span>
-    </div>
+    <span class="name">{{ name }}</span>
   </div>
 </section>

@@ -3,10 +3,11 @@ import { CtaComponent } from '../cta/cta.component';
 import { TestimonialsComponent } from '../testimonials/testimonials.component';
 import { DetailSectionComponent } from '../detail-section/detail-section.component';
 import { ServicesComponent } from '../services/services.component';
+import { NextStepsComponent } from '../next-steps/next-steps.component';
 
 @Component({
   selector: 'app-impact-page',
-  imports: [CtaComponent, TestimonialsComponent, DetailSectionComponent, ServicesComponent],
+  imports: [CtaComponent, TestimonialsComponent, DetailSectionComponent, ServicesComponent, NextStepsComponent],
   templateUrl: './impact-page.component.html',
   styleUrl: './impact-page.component.scss'
 })

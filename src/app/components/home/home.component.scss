@@ -1,0 +1,174 @@
+/* === Who we are: statement panel + mission === */
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 560px;
+}
+
+.statement-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(3.5rem, 7vw, 6rem) clamp(1.5rem, 6vw, 5.5rem);
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--brand-700), var(--brand-900));
+  color: #fff;
+
+  .watermark {
+    position: absolute;
+    right: -4rem;
+    bottom: -3rem;
+    width: 22rem;
+    opacity: 0.07;
+    filter: brightness(0) invert(1);
+    pointer-events: none;
+  }
+}
+
+.statement-lead {
+  position: relative;
+  max-width: 26rem;
+  margin: 0 0 1.25rem;
+  font-family: var(--font-condensed);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.statement-words {
+  position: relative;
+  margin: 0;
+  font-family: var(--font-condensed);
+  font-size: clamp(2.8rem, 5.2vw, 4.75rem);
+  font-weight: 800;
+  line-height: 0.98;
+  text-transform: uppercase;
+
+  span {
+    color: var(--brand-300);
+  }
+}
+
+.text-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(3.5rem, 7vw, 6rem) clamp(1.5rem, 6vw, 5.5rem);
+
+  p:not(.ui-kicker) {
+    max-width: 34rem;
+    margin: 0 0 1.25rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--ink-600);
+  }
+
+  .ui-btn {
+    margin-top: 1rem;
+  }
+}
+
+/* === Culture === */
+.culture {
+  padding: clamp(4.5rem, 8vw, 7rem) 0;
+  background: var(--brand-900);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.culture-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.culture-lead {
+  max-width: 40rem;
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.75;
+}
+
+.culture-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.culture-card {
+  .media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--brand-800);
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 40% 0 0;
+      background: linear-gradient(to top, rgba(3, 29, 14, 0.95), transparent);
+    }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.04);
+  }
+
+  h3 {
+    position: absolute;
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: 1.25rem;
+    z-index: 1;
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 1.75rem;
+    color: #fff;
+  }
+
+  p {
+    margin: 0;
+    padding: 1.4rem 0 0;
+    border-top: 3px solid var(--brand-500);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 1024px) {
+  .culture-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-split {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .culture-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .culture-cards {
+    grid-template-columns: 1fr;
+  }
+}

@@ -4,104 +4,12 @@
   [backgroundImage]="'assets/banners/team-banner.jpeg'"
 ></app-cta>
 
-
-<section class="team-section">
-  <!-- Header -->
-  <div class="team-header">
-    <p class="section-label">Leadership & Growth</p>
-    <h2>Meet the Visionaries Behind ABC Group</h2>
-    <p class="section-subtext">
-      Our leadership team brings together experience, innovation, and mentorship —
-      shaping future leaders and driving success nationwide.
-    </p>
-  </div>
-
-  <!-- Team Tiered Layout -->
-  <div class="team-tiered">
-    <!-- Row 1: Angel (Leader) -->
-    <div class="tier tier-leader">
-      <article
-        class="team-card leader"
-        (click)="toggleMember(team[0])"
-        [class.active]="team[0].active"
-      >
-        <img [src]="team[0].image" [alt]="team[0].title" />
-        <span class="scrim"></span>
-
-        <div class="meta">
-          <h3>{{ team[0].title }}</h3>
-          <p class="role">{{ team[0].role }}</p>
-        </div>
-
-        <div class="bio">
-          <p>{{ team[0].description }}</p>
-        </div>
-      </article>
-    </div>
-
-    <!-- Row 2: Jesus, Joanna, Amani -->
-    <div class="tier tier-row">
-      <article
-        class="team-card"
-        *ngFor="let member of [team[1], team[2], team[4]]"
-        (click)="toggleMember(member)"
-        [class.active]="member.active"
-      >
-        <img [src]="member.image" [alt]="member.title" />
-        <span class="scrim"></span>
-
-        <div class="meta">
-          <h4>{{ member.title }}</h4>
-          <p class="role">{{ member.role }}</p>
-        </div>
-
-        <div class="bio">
-          <p>{{ member.description }}</p>
-        </div>
-      </article>
-    </div>
-
-    <!-- Row 3: Maria, Gabe -->
-    <div class="tier tier-row">
-      <article
-        class="team-card"
-        *ngFor="let member of [team[3], team[5], team[6]]"
-        (click)="toggleMember(member)"
-        [class.active]="member.active"
-      >
-        <img [src]="member.image" [alt]="member.title" />
-        <span class="scrim"></span>
-
-        <div class="meta">
-          <h4>{{ member.title }}</h4>
-          <p class="role">{{ member.role }}</p>
-        </div>
-
-        <div class="bio">
-          <p>{{ member.description }}</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- Full Bio Modal -->
-<div class="bio-modal" *ngIf="selectedMember" (click)="closeModal()">
-  <div class="bio-card" (click)="$event.stopPropagation()">
-    <button class="close-btn" (click)="closeModal()">×</button>
-    <img [src]="selectedMember.image" [alt]="selectedMember.title" />
-    <div class="bio-content">
-      <h3>{{ selectedMember.title }}</h3>
-      <p class="role">{{ selectedMember.role }}</p>
-      <p class="desc">{{ selectedMember.description }}</p>
-    </div>
-  </div>
-</div>
-
-
+<app-team-section></app-team-section>
 
 <app-testimonials
   [quote]="testimonial.quote"
   [name]="testimonial.name"
   [avatar]="testimonial.avatar"
 ></app-testimonials>
+
+<app-next-steps></app-next-steps>

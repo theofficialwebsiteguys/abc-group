@@ -1,43 +1,34 @@
 <section class="hero">
   <!-- Background slideshow -->
-  <div class="bg">
+  <div class="bg" aria-hidden="true">
     <img *ngFor="let image of bgImages; let i = index"
-         [src]="image" [class.active]="i === currentImageIndex" alt=""/>
-    <div class="vignette"></div>
-    <div class="gradient"></div>
+         [src]="image" [class.active]="i === currentImageIndex" alt="" />
   </div>
 
-  <!-- Content -->
-  <div class="container">
-    <div class="copy">
-      <p class="kicker">Consulting • Growth • People</p>
+  <div class="ui-container hero-inner">
+    <p class="ui-kicker ui-kicker--light">Consulting • Growth • People</p>
 
-      <h1>
-        <span class="accent">Atlanta’s Trusted</span><br/>
-        Consulting Partner
-      </h1>
+    <h1>Atlanta’s <em>Trusted</em><br />Consulting Partner</h1>
 
-      <p class="sub">
-        We help brands scale with strategy, leadership development, and performance marketing.
-      </p>
+    <p class="sub">
+      We help brands scale with strategy, leadership development, and performance marketing.
+    </p>
 
-      <div class="cta-row">
-        <a routerLink="/contact" class="btn primary">Start a Project</a>
-        <a routerLink="/impact" class="btn ghost">See Our Impact</a>
-      </div>
-
-      <ul class="quick-stats" aria-label="Company highlights">
-        <li><strong>200+</strong> partners</li>
-        <li><strong>10yrs</strong> of impact</li>
-        <li><strong>ROI</strong>-focused</li>
-      </ul>
+    <div class="actions">
+      <a *ngIf="applyUrl" [href]="applyUrl" class="ui-btn ui-btn--solid">Apply Today <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <a routerLink="/impact" class="ui-btn ui-btn--light">See Our Impact</a>
     </div>
+  </div>
 
-    <aside class="card">
-      <div class="testimonial" *ngFor="let t of testimonials; let i = index" [class.active]="i===currentQuoteIndex">
-        <p class="quote">“{{t.quote}}”</p>
-        <p class="author">— {{t.author}}</p>
-      </div>
-    </aside>
+  <div class="slide-dots" aria-hidden="true">
+    <span *ngFor="let image of bgImages; let i = index" [class.active]="i === currentImageIndex"></span>
   </div>
 </section>
+
+<div class="ui-container">
+  <ul class="stats" aria-label="Company highlights">
+    <li><strong>200+</strong><span>Partners</span></li>
+    <li><strong>10yrs</strong><span>Of Impact</span></li>
+    <li><strong>ROI</strong><span>Focused</span></li>
+  </ul>
+</div>
